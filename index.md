@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<title>Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.css">
+<script src="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.js"></script>
+<style>  
+  body { line-height:1.5; margin:auto; padding:3px; max-width:1024px; display:none; FONT-FAMILY:"SEGOE UI",ARIAL }
+  h1  { font-size:200%; padding:16px; border:1px solid lightgrey; COLOR:WHITE; BACKGROUND: LINEAR-GRADIENT(TO BOTTOM RIGHT, #06C, #FC0) }
+  h2  { border-bottom:1px solid grey; padding:2px; COLOR:TEAL }
+</style>
+<body onload="document.body.innerHTML=md.html(document.body.innerHTML); document.body.style.display='block'; 
+              document.getElementById('qrcode').src='https://chart.googleapis.com/chart?cht=qr&chs=177x177&chl='+location.href" >
+<img id=qrcode style="float:right; margin:5px; border:1px solid lightgrey; width:70px" />
+<!--======= COPY ABOVE CODE AS HEADER, THEN FOLLOW WITH RESUME CONTENT IN MARKDOWN FORMAT =========-->
+  
 <img style="float:right;border-radius:100%;width:130px;padding:6px" src="profilepicsmall.jpg" />
 
 <span style="float:right;padding:6px"> 
