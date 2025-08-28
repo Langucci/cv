@@ -17,40 +17,40 @@
       display: none;
     }
 
-    h1 {
-      font-size: 2.2rem;
-      color: #fff;
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
       background: linear-gradient(to right, #007ACC, #00C7B7);
       padding: 1em;
       border-radius: 6px;
-      margin-bottom: 1em;
+      color: white;
     }
 
-    h2 {
-      font-size: 1.3rem;
-      color: #007ACC;
-      border-bottom: 1px solid #ddd;
-      margin-top: 2em;
-      padding-bottom: 0.2em;
+    .header h1 {
+      font-size: 2rem;
+      margin: 0;
+      flex: 1 1 auto;
     }
 
-    .top-bar {
+    .header-info {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 1em;
+      gap: 1em;
+    }
+
+    .profile-pic {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
     }
 
     .contact-info {
       font-size: 0.95rem;
       text-align: right;
-    }
-
-    .profile-pic {
-      border-radius: 50%;
-      width: 120px;
-      margin-left: auto;
+      color: white;
     }
 
     .download-button {
@@ -65,10 +65,19 @@
       text-align: center;
     }
 
+    h2 {
+      font-size: 1.3rem;
+      color: #007ACC;
+      border-bottom: 1px solid #ddd;
+      margin-top: 2em;
+      padding-bottom: 0.2em;
+    }
+
     @media (max-width: 600px) {
-      .top-bar {
+      .header {
         flex-direction: column;
         align-items: flex-start;
+        text-align: left;
       }
 
       .contact-info {
@@ -85,12 +94,15 @@
   </style>
 </head>
 <body>
-  <div class="top-bar">
-    <img src="profilepicsmall.jpg" alt="Profile Picture" class="profile-pic" />
-    <div class="contact-info">
-      landuccilionel@gmail.com<br>
-      +41 79 687 56 20<br>
-      Nationality: Swiss
+  <div class="header">
+    <h1>Lionel Landucci</h1>
+    <div class="header-info">
+      <img src="profilepicsmall.jpg" alt="Profile Picture" class="profile-pic" />
+      <div class="contact-info">
+        landuccilionel@gmail.com<br>
+        +41 79 687 56 20<br>
+        Nationality: Swiss
+      </div>
     </div>
   </div>
 
@@ -98,12 +110,8 @@
     <a class="download-button" href="resume.pdf" download>Download PDF</a>
   </p>
 
-  <img id="qrcode" style="float:right; border:1px solid lightgrey; width:70px; margin-left:10px;" />
-
   <div id="md-content">
-# Lionel Landucci
-
-## Executive Summary
+# Executive Summary
 
 * 9 years of product/program experience in IoT (telematics/sensors) with strong focus on execution/operations  
 * Hands‑on and proven experience in bringing devices from prototype to market  
@@ -149,11 +157,13 @@
       const container = document.getElementById('md-content');
       container.innerHTML = md.html(container.innerHTML);
       document.body.style.display = 'block';
-      document.getElementById('qrcode').src =
-        'https://chart.googleapis.com/chart?cht=qr&chs=177x177&chl=' + encodeURIComponent(location.href);
+
+      // Create QR code dynamically (prevents broken icon)
+      const qrImg = document.createElement('img');
+      qrImg.src = 'https://chart.googleapis.com/chart?cht=qr&chs=177x177&chl=' + encodeURIComponent(location.href);
+      qrImg.style.cssText = 'float:right; border:1px solid lightgrey; width:70px; margin-left:10px;';
+      document.body.insertBefore(qrImg, document.body.firstChild);
     });
   </script>
 </body>
 </html>
-
-Final layout fixes: clean button, QR, styling
