@@ -1,168 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Lionel Landucci – Resume</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Markdown → HTML renderer -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.css">
   <script defer src="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.js"></script>
+
   <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      margin: 1em auto;
-      padding: 1em;
-      max-width: 900px;
-      line-height: 1.6;
-      background: #f9f9f9;
-      display: none;
+    :root{
+      --brand-1:#0A74DA;  /* blue */
+      --brand-2:#00BFA6;  /* teal */
+      --ink:#1f2937;      /* dark text */
+      --muted:#6b7280;    /* muted text */
+      --card:#ffffff;
+      --bg:#f7f7f9;
     }
 
-    .header {
+    html,body{height:100%}
+    body{
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      margin: 0 auto;
+      max-width: 940px;
+      padding: 20px 18px 48px;
+      line-height: 1.7;
+      display: none; /* show after MD renders */
+    }
+
+    /* ======= HEADER ======= */
+    .header{
       display: flex;
-      flex-wrap: wrap;
+      gap: 24px;
       align-items: center;
       justify-content: space-between;
-      background: linear-gradient(to right, #007ACC, #00C7B7);
-      padding: 1em;
-      border-radius: 6px;
-      color: white;
+      padding: 28px 28px;
+      border-radius: 14px;
+      background: linear-gradient(110deg, var(--brand-1), var(--brand-2));
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(10,116,218,0.15);
+      margin-bottom: 14px;
     }
-
-    .header h1 {
-      font-size: 2rem;
-      margin: 0;
+    .header-left{
+      min-width: 0;
       flex: 1 1 auto;
     }
+    .name{
+      font-size: 2.15rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      margin: 0 0 6px 0;
+    }
+    .tagline{
+      margin: 0;
+      color: rgba(255,255,255,0.9);
+      font-size: 1rem;
+      font-weight: 500;
+    }
 
-    .header-info {
+    .header-right{
       display: flex;
       align-items: center;
-      gap: 1em;
+      gap: 18px;
     }
-
-    .profile-pic {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
+    .profile-pic{
+      width: 170px;         /* bigger photo */
+      height: 170px;
       object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.85);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+      flex: 0 0 auto;
     }
-
-    .contact-info {
-      font-size: 0.95rem;
+    .contact{
       text-align: right;
-      color: white;
+      font-size: 0.98rem;
+      line-height: 1.6;
     }
-
-    .download-button {
-      display: inline-block;
-      padding: 10px 18px;
-      background-color: #007ACC;
-      color: white;
+    .contact a{
+      color:#fff;
       text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      margin: 1em 0;
-      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.35);
+    }
+    .contact a:hover{ border-bottom-color:#fff; }
+
+    /* ======= ACTIONS ======= */
+    .actions{
+      display: flex;
+      justify-content: flex-end;
+      margin: 16px 0 22px;
+    }
+    .btn{
+      appearance: none;
+      border: 0;
+      background: var(--brand-1);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      box-shadow: 0 6px 14px rgba(10,116,218,0.18);
+      transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: #0b6bca;
+      box-shadow: 0 10px 18px rgba(10,116,218,0.24);
     }
 
-    h2 {
-      font-size: 1.3rem;
-      color: #007ACC;
-      border-bottom: 1px solid #ddd;
-      margin-top: 2em;
-      padding-bottom: 0.2em;
+    /* ======= MARKDOWN CONTENT ======= */
+    h1{ /* first MD h1 not used since header shows name, but keep style consistent */
+      font-size: 1.6rem;
+      margin: 26px 0 8px;
+      color: var(--ink);
     }
+    h2{
+      font-size: 1.25rem;
+      color: var(--brand-1);
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 6px;
+      margin-top: 32px;
+    }
+    h3, h4{
+      margin-top: 18px;
+      color: var(--ink);
+    }
+    ul{ margin: 10px 0 10px 22px; }
+    li{ margin: 6px 0; }
+    p{ margin: 10px 0; color: var(--ink); }
+    .subtle{ color: var(--muted); }
 
-    @media (max-width: 600px) {
-      .header {
-        flex-direction: column;
+    /* ======= RESPONSIVE ======= */
+    @media (max-width: 860px){
+      .header{ padding: 22px; }
+      .profile-pic{ width: 150px; height: 150px; }
+    }
+    @media (max-width: 640px){
+      .header{
+        flex-direction: column-reverse;
         align-items: flex-start;
-        text-align: left;
+        gap: 16px;
       }
-
-      .contact-info {
-        text-align: left;
-        margin-top: 1em;
-      }
-
-      .download-button {
-        display: block;
-        width: fit-content;
-        margin: 1em auto;
-      }
+      .contact{ text-align: left; }
+      .profile-pic{ width: 128px; height: 128px; }
+      .actions{ justify-content: stretch; }
+      .btn{ width: 100%; text-align: center; }
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Lionel Landucci</h1>
-    <div class="header-info">
-      <img src="profilepicsmall.jpg" alt="Profile Picture" class="profile-pic" />
-      <div class="contact-info">
-        landuccilionel@gmail.com<br>
-        +41 79 687 56 20<br>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <h1 class="name">Lionel Landucci</h1>
+      <p class="tagline">Product & Program Leader (IoT · Sensors · Operations)</p>
+    </div>
+
+    <div class="header-right">
+      <img src="profilepicsmall.jpg" alt="Profile picture of Lionel Landucci" class="profile-pic" />
+      <div class="contact">
+        <a href="mailto:landuccilionel@gmail.com">landuccilionel@gmail.com</a><br />
+        +41 79 687 56 20<br />
         Nationality: Swiss
       </div>
     </div>
+  </header>
+
+  <!-- ACTIONS -->
+  <div class="actions">
+    <a class="btn" href="resume.pdf" download>Download PDF</a>
   </div>
 
-  <p style="text-align:right;">
-    <a class="download-button" href="resume.pdf" download>Download PDF</a>
-  </p>
-
+  <!-- MARKDOWN CONTENT (will be converted to HTML) -->
   <div id="md-content">
-# Executive Summary
-
+## Executive Summary
 * 9 years of product/program experience in IoT (telematics/sensors) with strong focus on execution/operations  
-* Hands‑on and proven experience in bringing devices from prototype to market  
+* Hands-on and proven experience in bringing devices from prototype to market  
 
 ## Working Experience
-
 #### Nexxiot AG (Head of Sensors, 2024/01 – present) 
-* Set the IoT sensor portfolio strategy and 12–18 month roadmap  
-* Led cross‑functional delivery across hardware, firmware, data, test, ops, and suppliers  
-* Built end‑to‑end performance dashboards based on device data  
+* Set the IoT sensor portfolio strategy and 12–18 month roadmap  
+* Led cross-functional delivery across hardware, firmware, data, test, ops, and suppliers  
+* Built end-to-end performance dashboards based on device data  
 
 #### Nexxiot AG (Product Owner – Hardware, 2020/07 – 2023/12) 
-* Owned all customer‑facing applications for the IoT sensor portfolio  
-* Led project for new security‑relevant cargo monitoring sensor  
+* Owned all customer-facing applications for the IoT sensor portfolio  
+* Led project for new security-relevant cargo monitoring sensor  
 
 #### Nexxiot AG (Solution Manager, 2019/10 – 2020/07) 
 * Managed development and launch of IoT sensor for dangerous goods transport  
 * Bridged engineering and customer needs  
 
 #### Nexxiot AG (Project Manager, 2019/02 – 2019/09) 
-* Built QMS and ISMS; supported ISO 9001/27001 audits  
+* Built QMS and ISMS; supported ISO 9001/27001 audits  
 * Coordinated international shipments and logistics  
 
 ## Major Contributions
-
-* Secured ~CHF 3 m project order that helped fund company growth  
-* Deployed ML‑based classification to reduce errors and save ~CHF 1 M  
+* Secured ~CHF 3 m project order that helped fund company growth  
+* Deployed ML-based classification to reduce errors and save ~CHF 1 M  
 * Created global sensor KPI dashboards to drive product improvement  
 
 ## Education & Qualifications
-
 * BA Art History — University of Zurich (2015–2018)  
 * Matura (Science & Mathematics) — Kantonsschule Schaffhausen (2009–2013)  
 
 ## Misc. Information
-
 * Languages: German (native), English (fluent), French (advanced)  
-* Availability: 3 months notice  
+* Availability: 3 months notice
   </div>
 
   <script>
+    // Convert Markdown -> HTML, then show the page
     window.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('md-content');
       container.innerHTML = md.html(container.innerHTML);
       document.body.style.display = 'block';
-
-      // Create QR code dynamically (prevents broken icon)
-      const qrImg = document.createElement('img');
-      qrImg.src = 'https://chart.googleapis.com/chart?cht=qr&chs=177x177&chl=' + encodeURIComponent(location.href);
-      qrImg.style.cssText = 'float:right; border:1px solid lightgrey; width:70px; margin-left:10px;';
-      document.body.insertBefore(qrImg, document.body.firstChild);
     });
   </script>
 </body>
