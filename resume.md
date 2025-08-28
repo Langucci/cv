@@ -1,48 +1,51 @@
 <img style="float:right;border-radius:50%;width:70px;padding:6px" src="avatar-man.jpg" />
 
 <span style="float:right;padding:6px"> 
-  someone@email.com <br> mobile: +852 xxxxxxxx <br> Nationality: Chinese
+  landuccilionel@gmail.com <br> mobile: +41 79 687 56 20 <br> Nationality: Swiss
 </span>
 
-# Casualwriter  
+# Lionel Landucci  
 
 ## Executive Summary
 
-* 10 years project/team management experience
-* PMP, OCP, AWS Certification
-* Hand-on experience in oracle database
-* Proficient in JavaScript, Java, Powerbuilder
+* 9 years of product/program experience in IoT (telematics/sensors) with strong focus on execution/operations
+* Hands-on and proven experience in bringing devices from prototype to market  
 
 ## Working Experience
 
-#### Current Company (Project Manager, 2015/08 - present) 
+#### Nexxiot AG (Head of Sensors, 2024/01 – present) 
 
-* Lead team of 10 to oversee conception, requirement gathering, documentation and rollout.
-* Conduct troubleshooting, analysis and support. Gather user feedback, document bugs and change requests.
+* Set the IoT sensor portfolio strategy and 12–18 month roadmap
+* Led cross-functional delivery across hardware, firmware, data, test, ops, and suppliers
+* Built end-to-end performance dashboards based device data to improve quality and sped up decision-making
 
-#### Second Company (System Analyst, 2011/06 - 2015/07) 
+#### Nexxiot AG (Product Owner – Hardware, 2020/07 – 2023/12) 
 
-* Led team of 5 for application development
-* Coordinated with developers, support staff and vendors across Hong Kong, China, Taiwan
+* Owned all customer-facing applications for the IoT sensor portfolio (Backend services, web frontend and mobile apps)
+* Lead Project for new security relevant cargo monitoring sensor
 
-#### My first Company (Analyst Programmer, 2005/01 - 2011/05)
+#### Nexxiot AG (Solution Manager, 2019/10 – 2020/07) 
 
-* Develop multiple applications using Javascript, Java, PHP, Powerbuilder, Oracle
+* Managed development and launch activities for an IoT sensor monitoring dangerous goods transportation
+* Bridged engineering and customer needs to ensure quality and fit
 
-## Projects: 
+#### Nexxiot AG (Project Manager, 2019/02 – 2019/09) 
 
-* [Casual-Markdown](https://github.com/casualwriter/powerpage) - a lightweight markdown parser
-* [Powerpage](https://github.com/casualwriter/powerpage) - a lightweight browser for html applications
+* Built the companies QMS and ISMS; supported in ISO 9001/ISO 27001 audits  
+* Coordinated international shipments and internal logistics processes
+
+## Major Contributions: 
+
+* Played key role in securing financal funding for the company by securing large project order ~CHF 3m with major client
+* Implemented an ML based measurement classification service for remote sensors, improving reliability and avoiding ~CHF 1M in costs
+* Setting up KPI monitoring dashboards for all sensor products which helped grow business worldwide by reacting quickly to shortcomings
 
 ## Education & Qualifications
 
-* AWS Certification (2021/12)
-* Oracle Certified Professional (2020/02)
-* Project Management Professional (PMP) (2018/10)
-* Bachelor of Computer Science (Sep 2004)
-* The Chinese University of Hong Kong (2000 - 2004)
+* Bachelor of Arts, Art History — University of Zurich (2015/09 – 2018/06)
+* Matura (Science & Mathematics) — Kantonsschule Schaffhausen (2009 – 2013)
 
 ## Misc. Information
 
-* Languages: English (good), Cantonese (fluent/native), Mandarin (good)
-* Availability: 1 month's notice
+* Languages: German (native), English (fluent), French (advanced)
+* Availability: 3 months notice
