@@ -11,15 +11,13 @@
 
   <style>
     :root{
-      --brand-1:#0A74DA;  /* blue */
-      --brand-2:#00BFA6;  /* teal */
-      --ink:#1f2937;      /* dark text */
-      --muted:#6b7280;    /* muted text */
-      --card:#ffffff;
+      --brand-1:#0A74DA;
+      --brand-2:#00BFA6;
+      --ink:#1f2937;
+      --muted:#6b7280;
       --bg:#f7f7f9;
     }
 
-    html,body{height:100%}
     body{
       font-family: "Segoe UI", Arial, sans-serif;
       color: var(--ink);
@@ -28,52 +26,44 @@
       max-width: 940px;
       padding: 20px 18px 48px;
       line-height: 1.7;
-      display: none; /* show after MD renders */
+      display: none;
     }
 
-    /* ======= HEADER ======= */
+    /* ===== HEADER ===== */
     .header{
       display: flex;
       gap: 24px;
       align-items: center;
       justify-content: space-between;
-      padding: 28px 28px;
-      border-radius: 14px;
       background: linear-gradient(110deg, var(--brand-1), var(--brand-2));
+      padding: 28px;
+      border-radius: 14px;
       color: #fff;
-      box-shadow: 0 10px 30px rgba(10,116,218,0.15);
-      margin-bottom: 14px;
+      margin-bottom: 20px;
     }
-    .header-left{
-      min-width: 0;
-      flex: 1 1 auto;
-    }
+    .header-left{ flex: 1 1 auto; }
     .name{
       font-size: 2.15rem;
       font-weight: 700;
-      letter-spacing: 0.2px;
       margin: 0 0 6px 0;
     }
     .tagline{
       margin: 0;
       color: rgba(255,255,255,0.9);
       font-size: 1rem;
-      font-weight: 500;
     }
-
     .header-right{
       display: flex;
       align-items: center;
       gap: 18px;
     }
     .profile-pic{
-      width: 170px;         /* bigger photo */
+      width: 170px;
       height: 170px;
-      object-fit: cover;
+      object-fit: contain;  /* zooms out instead of cropping */
       border-radius: 50%;
       border: 3px solid rgba(255,255,255,0.85);
       box-shadow: 0 8px 18px rgba(0,0,0,0.18);
-      flex: 0 0 auto;
     }
     .contact{
       text-align: right;
@@ -87,20 +77,31 @@
     }
     .contact a:hover{ border-bottom-color:#fff; }
 
-    /* ======= ACTIONS ======= */
+    /* ===== MARKDOWN CONTENT ===== */
+    h2{
+      font-size: 1.25rem;
+      color: var(--brand-1);
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 6px;
+      margin-top: 32px;
+    }
+    h3, h4{ margin-top: 18px; }
+    ul{ margin: 10px 0 10px 22px; }
+    li{ margin: 6px 0; }
+    p{ margin: 10px 0; color: var(--ink); }
+
+    /* ===== BUTTON ===== */
     .actions{
       display: flex;
-      justify-content: flex-end;
-      margin: 16px 0 22px;
+      justify-content: center;
+      margin-top: 40px;
     }
     .btn{
-      appearance: none;
-      border: 0;
       background: var(--brand-1);
       color: #fff;
       font-weight: 700;
       text-decoration: none;
-      padding: 10px 18px;
+      padding: 12px 22px;
       border-radius: 8px;
       box-shadow: 0 6px 14px rgba(10,116,218,0.18);
       transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
@@ -111,33 +112,7 @@
       box-shadow: 0 10px 18px rgba(10,116,218,0.24);
     }
 
-    /* ======= MARKDOWN CONTENT ======= */
-    h1{ /* first MD h1 not used since header shows name, but keep style consistent */
-      font-size: 1.6rem;
-      margin: 26px 0 8px;
-      color: var(--ink);
-    }
-    h2{
-      font-size: 1.25rem;
-      color: var(--brand-1);
-      border-bottom: 1px solid #e5e7eb;
-      padding-bottom: 6px;
-      margin-top: 32px;
-    }
-    h3, h4{
-      margin-top: 18px;
-      color: var(--ink);
-    }
-    ul{ margin: 10px 0 10px 22px; }
-    li{ margin: 6px 0; }
-    p{ margin: 10px 0; color: var(--ink); }
-    .subtle{ color: var(--muted); }
-
-    /* ======= RESPONSIVE ======= */
-    @media (max-width: 860px){
-      .header{ padding: 22px; }
-      .profile-pic{ width: 150px; height: 150px; }
-    }
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 640px){
       .header{
         flex-direction: column-reverse;
@@ -145,9 +120,7 @@
         gap: 16px;
       }
       .contact{ text-align: left; }
-      .profile-pic{ width: 128px; height: 128px; }
-      .actions{ justify-content: stretch; }
-      .btn{ width: 100%; text-align: center; }
+      .profile-pic{ width: 140px; height: 140px; }
     }
   </style>
 </head>
@@ -169,12 +142,7 @@
     </div>
   </header>
 
-  <!-- ACTIONS -->
-  <div class="actions">
-    <a class="btn" href="resume.pdf" download>Download PDF</a>
-  </div>
-
-  <!-- MARKDOWN CONTENT (will be converted to HTML) -->
+  <!-- MARKDOWN CONTENT -->
   <div id="md-content">
 ## Executive Summary
 * 9 years of product/program experience in IoT (telematics/sensors) with strong focus on execution/operations  
@@ -212,8 +180,12 @@
 * Availability: 3 months notice
   </div>
 
+  <!-- ACTIONS AT THE BOTTOM -->
+  <div class="actions">
+    <a class="btn" href="resume.pdf" download>Download PDF</a>
+  </div>
+
   <script>
-    // Convert Markdown -> HTML, then show the page
     window.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('md-content');
       container.innerHTML = md.html(container.innerHTML);
