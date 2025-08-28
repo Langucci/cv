@@ -4,36 +4,39 @@
   <meta charset="UTF-8">
   <title>Lionel Landucci – Resume</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.css">
-  <script src="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.js"></script>
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.css"
+  >
+  <script 
+    defer 
+    src="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.js">
+  </script>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
-      margin: auto;
-      padding: 1.5em;
+      margin: 1em auto;
+      padding: 1em;
       max-width: 900px;
       line-height: 1.6;
       background: #f9f9f9;
       display: none;
     }
-
     h1 {
       font-size: 2.2rem;
       color: #fff;
       background: linear-gradient(to right, #007ACC, #00C7B7);
       padding: 1em;
-      margin-bottom: 1em;
       border-radius: 6px;
+      margin-bottom: 1em;
     }
-
     h2 {
       font-size: 1.3rem;
       color: #007ACC;
       border-bottom: 1px solid #ddd;
-      padding-bottom: 0.2em;
       margin-top: 2em;
+      padding-bottom: 0.2em;
     }
-
     .top-bar {
       display: flex;
       flex-wrap: wrap;
@@ -41,18 +44,15 @@
       align-items: center;
       margin-bottom: 1em;
     }
-
     .contact-info {
       font-size: 0.95rem;
       text-align: right;
     }
-
     .profile-pic {
       border-radius: 50%;
       width: 120px;
       margin-left: auto;
     }
-
     .download-button {
       display: inline-block;
       margin: 1em 0;
@@ -64,35 +64,26 @@
       font-weight: bold;
       float: right;
     }
-
     @media (max-width: 600px) {
       .top-bar {
         flex-direction: column;
         align-items: flex-start;
       }
-
       .contact-info {
         text-align: left;
         margin-top: 1em;
       }
-
       .download-button {
         float: none;
         display: block;
-        width: fit-content;
         margin: 1em auto;
       }
     }
   </style>
 </head>
-<body onload="
-  document.body.innerHTML = md.html(document.body.innerHTML);
-  document.body.style.display = 'block';
-  document.getElementById('qrcode').src =
-    'https://chart.googleapis.com/chart?cht=qr&chs=177x177&chl=' + location.href;
-">
+<body>
   <div class="top-bar">
-    <img src="profilepicsmall.jpg" alt="Profile Picture" class="profile-pic">
+    <img src="profilepicsmall.jpg" alt="Profile Picture" class="profile-pic" />
     <div class="contact-info">
       landuccilionel@gmail.com<br>
       +41 79 687 56 20<br>
@@ -103,46 +94,59 @@
   <a class="download-button" href="resume.pdf" download>📄 Download PDF</a>
   <img id="qrcode" style="float:right; border:1px solid lightgrey; width:70px; margin-left:10px;" />
 
-  # Lionel Landucci
+  <!-- Markdown content starts below -->
+  <div id="md-content">
+# Lionel Landucci
 
-  ## Executive Summary
+## Executive Summary
 
-  * 9 years of product/program experience in IoT (telematics/sensors) with strong focus on execution/operations
-  * Hands-on and proven experience in bringing devices from prototype to market  
+* 9 years of product/program experience in IoT (telematics/sensors) with strong focus on execution/operations  
+* Hands‑on and proven experience in bringing devices from prototype to market  
 
-  ## Working Experience
+## Working Experience
 
-  #### Nexxiot AG (Head of Sensors, 2024/01 – present) 
-  * Set the IoT sensor portfolio strategy and 12–18 month roadmap
-  * Led cross-functional delivery across hardware, firmware, data, test, ops, and suppliers
-  * Built end-to-end performance dashboards based on device data
+#### Nexxiot AG (Head of Sensors, 2024/01 – present) 
+* Set the IoT sensor portfolio strategy and 12–18 month roadmap  
+* Led cross‑functional delivery across hardware, firmware, data, test, ops, and suppliers  
+* Built end‑to‑end performance dashboards based on device data  
 
-  #### Nexxiot AG (Product Owner – Hardware, 2020/07 – 2023/12) 
-  * Owned all customer-facing applications for the IoT sensor portfolio
-  * Led project for new security-relevant cargo monitoring sensor
+#### Nexxiot AG (Product Owner – Hardware, 2020/07 – 2023/12)
+* Owned all customer‑facing applications for the IoT sensor portfolio  
+* Led project for new security‑relevant cargo monitoring sensor  
 
-  #### Nexxiot AG (Solution Manager, 2019/10 – 2020/07) 
-  * Managed development and launch of IoT sensor for dangerous goods transport
-  * Bridged engineering and customer needs
+#### Nexxiot AG (Solution Manager, 2019/10 – 2020/07)
+* Managed development and launch of IoT sensor for dangerous goods transport  
+* Bridged engineering and customer needs  
 
-  #### Nexxiot AG (Project Manager, 2019/02 – 2019/09) 
-  * Built QMS and ISMS; supported ISO 9001/27001 audits  
-  * Coordinated international shipments and logistics
+#### Nexxiot AG (Project Manager, 2019/02 – 2019/09)
+* Built QMS and ISMS; supported ISO 9001/27001 audits  
+* Coordinated international shipments and logistics  
 
-  ## Major Contributions
+## Major Contributions
 
-  * Secured ~CHF 3m project order that helped fund company growth
-  * Deployed ML-based classification to reduce errors and save ~CHF 1M
-  * Created global sensor KPI dashboards to drive product improvement
+* Secured ~CHF 3 m project order that helped fund company growth  
+* Deployed ML‑based classification to reduce errors and save ~CHF 1 M  
+* Created global sensor KPI dashboards to drive product improvement  
 
-  ## Education & Qualifications
+## Education & Qualifications
 
-  * BA Art History — University of Zurich (2015–2018)
-  * Matura (Science & Mathematics) — Kantonsschule Schaffhausen (2009–2013)
+* BA Art History — University of Zurich (2015–2018)  
+* Matura (Science & Mathematics) — Kantonsschule Schaffhausen (2009–2013)  
 
-  ## Misc. Information
+## Misc. Information
 
-  * Languages: German (native), English (fluent), French (advanced)
-  * Availability: 3 months notice
+* Languages: German (native), English (fluent), French (advanced)  
+* Availability: 3 months notice  
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('md-content');
+      container.innerHTML = md.html(container.innerHTML);
+      document.body.style.display = 'block';
+      document.getElementById('qrcode').src =
+        'https://chart.googleapis.com/chart?cht=qr&chs=177x177&chl=' + encodeURIComponent(location.href);
+    });
+  </script>
 </body>
 </html>
