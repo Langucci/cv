@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Resume of Lionel Landucci — Senior Product Manager / Head of Sensors for connected devices & data products.">
 
-  <!-- Markdown → HTML renderer -->
+  <!-- Markdown renderer -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.css">
   <script src="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.js"></script>
 
@@ -22,6 +22,7 @@
 
     html, body {
       background: var(--bg);
+      height: 100%;
     }
 
     body {
@@ -32,6 +33,9 @@
       padding: 20px 18px 24px;
       line-height: 1.7;
       display: none;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     .header {
@@ -92,6 +96,7 @@
       border-radius: 14px;
       padding: 22px;
       box-shadow: none;
+      flex-grow: 1;
     }
 
     h2 {
@@ -132,15 +137,33 @@
     }
 
     @media print {
-      body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body {
+        background: #fff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
       .header {
         background: #fff !important;
         color: #000;
         border: 1px solid #e5e7eb;
       }
-      .contact a { color: #000 !important; text-decoration: underline; border: 0; }
-      #card { box-shadow: none; border: 0; padding-top: 0; }
-      .actions { display: none; }
+
+      .contact a {
+        color: #000 !important;
+        text-decoration: underline;
+        border: 0;
+      }
+
+      #card {
+        box-shadow: none;
+        border: 0;
+        padding-top: 0;
+      }
+
+      .actions {
+        display: none;
+      }
     }
 
     @media (max-width: 640px) {
@@ -149,18 +172,27 @@
         gap: 16px;
         text-align: left;
       }
+
       .header-left,
       .header-center,
       .header-right {
         justify-self: start;
         text-align: left;
       }
-      .profile-pic { width: 140px; height: 140px; }
-      .contact { text-align: left; }
+
+      .profile-pic {
+        width: 140px;
+        height: 140px;
+      }
+
+      .contact {
+        text-align: left;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header class="header" role="banner" aria-label="Resume header">
     <div class="header-left">
       <h1 class="name">Lionel Landucci</h1>
@@ -182,12 +214,22 @@
     </div>
   </header>
 
+  <!-- MAIN CARD -->
   <div id="card">
-    <!-- Markdown content that gets rendered by JS -->
-    <div id="md-content">
+    <div id="md-content"></div>
+
+    <div class="actions">
+      <a class="btn" href="resume.pdf" download>Download PDF</a>
+    </div>
+  </div>
+
+  <!-- JS: Render Markdown -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const mdText = `
 ## Summary
 **Senior Product Manager / Head of Sensors for connected devices & data products.** Owns portfolio and 12–18 month roadmaps across hardware, firmware, data, test, and operations.  
-Managed fleet of **~30k devices** over **+20 clients**; **~CHF 1.6M annual turnover.**  Reduced false positives **90%** (ML), saved **CHF1M**, secured **CHF3M** order; leads a team of **4FTE**.
+Managed fleet of **~30k devices** over **+20 clients**; **~CHF 1.6M annual turnover.** Reduced false positives **90%** (ML), saved **CHF1M**, secured **CHF3M** order; leads a team of **4FTE**.
 
 ## Skills & Tools
 - **Product Strategy & Delivery:** Roadmapping (12–18 mo), Portfolio and Project mgmt, Stage-Gate, Risk & dependency mgmt, Vendor & contract mgmt, Forecasting & inventory, OKRs  
@@ -222,35 +264,15 @@ Managed fleet of **~30k devices** over **+20 clients**; **~CHF 1.6M annual turno
 ## Languages & Availability
 - **Languages:** German (native), English (fluent), French (advanced)  
 - **Availability:** 3 months’ notice
-    </div>
+`;
 
-    <!-- ✅ Download button now outside markdown but inside white card -->
-    <div class="actions">
-      <a class="btn" href="resume.pdf" download>Download PDF</a>
-    </div>
-  </div>
-
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('md-content');
-      let mdText = container.textContent || container.innerText || '';
-      mdText = mdText
-        .replace(/\r\n/g, '\n')
-        .replace(/[\u00A0\u202F\u2007\u2009\u200A\u200B]/g, ' ');
-
-      const lines = mdText.split('\n');
-      const indents = lines.filter(l => l.trim()).map(l => (l.match(/^\s*/)||[''])[0].length);
-      const minIndent = indents.length ? Math.min.apply(null, indents) : 0;
-      if (minIndent > 0) {
-        mdText = lines.map(l => l.startsWith(' '.repeat(minIndent)) ? l.slice(minIndent) : l).join('\n');
-      }
-
       if (window.md && typeof md.html === 'function') {
         container.innerHTML = md.html(mdText);
       }
-
       document.body.style.display = 'block';
     });
   </script>
 </body>
 </html>
+
