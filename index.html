@@ -91,7 +91,7 @@
       background: var(--card);
       border-radius: 14px;
       padding: 22px;
-      box-shadow: none; /* Removed shadow that looks like a gray banner */;
+      box-shadow: none;
     }
 
     h2 {
@@ -108,11 +108,10 @@
     p { margin: 10px 0; color: var(--ink); }
     .keywords { font-size: .95rem; color: var(--muted); }
 
-    /* ===== BUTTON ===== */
     .actions {
       display: flex;
       justify-content: center;
-      margin-top: 18px;
+      margin-top: 28px;
     }
 
     .btn {
@@ -162,7 +161,6 @@
   </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header class="header" role="banner" aria-label="Resume header">
     <div class="header-left">
       <h1 class="name">Lionel Landucci</h1>
@@ -184,50 +182,51 @@
     </div>
   </header>
 
-  <!-- MARKDOWN CONTENT -->
   <div id="card">
+    <!-- Markdown content that gets rendered by JS -->
     <div id="md-content">
 ## Summary
-**Senior Product Manager / Head of Sensors for connected devices & data products.** Owns portfolio and 12–18 month roadmaps across hardware, firmware, data, test, and operations. 
+**Senior Product Manager / Head of Sensors for connected devices & data products.** Owns portfolio and 12–18 month roadmaps across hardware, firmware, data, test, and operations.  
 Managed fleet of **~30k devices** over **+20 clients**; **~CHF 1.6M annual turnover.**  Reduced false positives **90%** (ML), saved **CHF1M**, secured **CHF3M** order; leads a team of **4FTE**.
 
 ## Skills & Tools
-- **Product Strategy & Delivery:** Roadmapping (12–18 mo), Portfolio and Project mgmt, Stage-Gate, Risk & dependency mgmt, Vendor & contract mgmt, Forecasting & inventory, OKRs
-- **Software & Platforms:** Cross-functional delivery with backend, frontend & mobile; Microservices & event-driven systems; Complex event/trigger engines; OTA services & rollout policies; Time-series & telemetry dashboards
-- **Data Platform & Analytics:** SQL, Python, Apache Superset; Time-series analysis & anomaly detection
+- **Product Strategy & Delivery:** Roadmapping (12–18 mo), Portfolio and Project mgmt, Stage-Gate, Risk & dependency mgmt, Vendor & contract mgmt, Forecasting & inventory, OKRs  
+- **Software & Platforms:** Cross-functional delivery with backend, frontend & mobile; Microservices & event-driven systems; Complex event/trigger engines; OTA services & rollout policies; Time-series & telemetry dashboards  
+- **Data Platform & Analytics:** SQL, Python, Apache Superset; Time-series analysis & anomaly detection  
 - **Quality & Compliance:** QMS/ISMS, ISO 9001, ISO 27001, Regulatory compliance (CE/RED; RoHS/REACH/WEEE), Supplier Quality, Reliability & environmental testing (shock/vibration, **IP67/68**)
 
 ## Working Experience
-#### Nexxiot AG — Head of Sensors  (Zurich, CH)  Jan 2024 - Present
+#### Nexxiot AG — Head of Sensors  (Zurich, CH)  Jan 2024 - Present  
 *Nexxiot is a TradeTech company enhancing global transportation with real-time visibility and analytics.*  
 - Lead a team of **4FTE** and own **multiple device portfolio** & **12–18-month** roadmap; coordinate hardware/firmware/data/test/ops and suppliers through stage-gates.  
-- Built **fleet-health KPI dashboards** (SQL, Python); improved performance and reduced DOA/RMA rates across regions.   
+- Built **fleet-health KPI dashboards** (SQL, Python); improved performance and reduced DOA/RMA rates across regions.  
 - Deployed **ML-based event classification** to production, cutting false positives **90%** and saving **CHF1M**.  
 - Orchestrated **OTA update service** with staged rollouts and automated rollback to reduce release risk.
 
-#### Nexxiot AG — Product Owner, Hardware  (Zurich, CH)  Jul 2020 - Dec 2023
+#### Nexxiot AG — Product Owner, Hardware  (Zurich, CH)  Jul 2020 - Dec 2023  
 - Owned the **hardware portfolio** for customer-facing sensor services; partnered with backend, API, web & mobile teams on end-to-end solutions.  
 - Led a **security-grade cargo monitoring device** from requirements to pilot/validation → market; secured a **multi-million-CHF** project order.  
 
-#### Nexxiot AG — Solution Manager  (Zurich, CH)  Oct 2019 - Jul 2020
+#### Nexxiot AG — Solution Manager  (Zurich, CH)  Oct 2019 - Jul 2020  
 - Managed development and launch of a **connected device for regulated cargo**; coordinated engineering, operations, and customer pilots.  
 
-#### Nexxiot AG — Project Manager  (Zurich, CH)  Feb 2019 - Sep 2019
+#### Nexxiot AG — Project Manager  (Zurich, CH)  Feb 2019 - Sep 2019  
 - Built **QMS** and **ISMS** foundations; supported **ISO 9001/27001** audits across teams and locations.  
 - Coordinated international shipments and logistics, ensuring on-time delivery and compliance.
 
 ## Education & Qualifications
 - **BA, Art History** — University of Zurich  (2015 - 2018)  
-- **Swiss Armed Forces, Tank Driver** — compulsory service (2013 - 2014)
+- **Swiss Armed Forces, Tank Driver** — compulsory service (2013 - 2014)  
 - **Matura, Science & Mathematics** — Kantonsschule Schaffhausen  (2009 - 2013)
 
 ## Languages & Availability
 - **Languages:** German (native), English (fluent), French (advanced)  
 - **Availability:** 3 months’ notice
+    </div>
 
-<div class="actions">
-  <a class="btn" href="resume.pdf" download>Download PDF</a>
-</div>
+    <!-- ✅ Download button now outside markdown but inside white card -->
+    <div class="actions">
+      <a class="btn" href="resume.pdf" download>Download PDF</a>
     </div>
   </div>
 
@@ -248,39 +247,7 @@ Managed fleet of **~30k devices** over **+20 clients**; **~CHF 1.6M annual turno
 
       if (window.md && typeof md.html === 'function') {
         container.innerHTML = md.html(mdText);
-      } else {
-        container.innerHTML = mdText
-          .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-          .replace(/^#### (.+)$/gm, '<h4>$1</h4>')
-          .replace(/^\- (.+)$/gm, '<li>$1</li>')
-          .replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>')
-          .replace(/(^|[\s(])\*([^*\n][\s\S]*?)\*(?=[\s).,;!?]|$)/g, '$1<em>$2</em>')
-          .replace(/(?:\r?\n){2,}/g, '<br><br>');
       }
-
-      (function emphasiseLeftovers(root){
-        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
-        const toReplace = [];
-        let n;
-        while ((n = walker.nextNode())) {
-          if (n.nodeValue && (n.nodeValue.includes('**') || /\s\*[^*].*?\*(?=[\s).,;!?]|$)/.test(n.nodeValue))) {
-            toReplace.push(n);
-          }
-        }
-        toReplace.forEach(node => {
-          const raw = node.nodeValue;
-          let html = raw
-            .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-          html = html.replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>');
-          html = html.replace(/(^|[\s(])\*([^*\n][\s\S]*?)\*(?=[\s).,;!?]|$)/g, '$1<em>$2</em>');
-
-          if (html !== raw) {
-            const span = document.createElement('span');
-            span.innerHTML = html;
-            node.parentNode.replaceChild(span, node);
-          }
-        });
-      })(container);
 
       document.body.style.display = 'block';
     });
