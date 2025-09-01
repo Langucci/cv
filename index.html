@@ -172,7 +172,7 @@
       </div>
     </div>
   </header>
-  
+
   <!-- MARKDOWN CONTENT -->
   <div id="card">
     <div id="md-content">
@@ -222,16 +222,30 @@
   </div>
 
   <script>
+    // Robust Markdown -> HTML render:
+    // 1) Read raw text (not HTML)
+    // 2) De-indent common left spaces (prevents accidental code blocks)
+    // 3) Use casual-markdown if available; otherwise a tiny fallback for bold/headings/lists
     window.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('md-content');
-      const mdText = container.textContent || container.innerText || '';
+      let mdText = container.textContent || container.innerText || '';
+      mdText = mdText.replace(/\r\n/g, '\n');
+
+      // De-indent common leading spaces so '##' and '**' parse correctly
+      const lines = mdText.split('\n');
+      const indents = lines
+        .filter(l => l.trim().length > 0)
+        .map(l => (l.match(/^\s*/)||[''])[0].length);
+      const minIndent = indents.length ? Math.min.apply(null, indents) : 0;
+      if (minIndent > 0) {
+        mdText = lines.map(l => l.startsWith(' '.repeat(minIndent)) ? l.slice(minIndent) : l).join('\n');
+      }
 
       try {
         if (window.md && typeof md.html === 'function') {
-          // Convert Markdown to HTML with casual-markdown
           container.innerHTML = md.html(mdText);
         } else {
-          // Minimal fallback so **bold** and basic structure still render
+          // Minimal fallback (bold, h2/h4, lists, simple line breaks)
           container.innerHTML = mdText
             .replace(/^## (.+)$/gm, '<h2>$1</h2>')
             .replace(/^#### (.+)$/gm, '<h4>$1</h4>')
