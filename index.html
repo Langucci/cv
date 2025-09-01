@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Lionel Landucci – Resume</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Resume of Lionel Landucci — Head of Sensors / Senior Product Manager (IoT hardware, sensors, operations).">
+  <meta name="description" content="Resume of Lionel Landucci — Senior Product Manager / Head of Sensors for connected devices & data products.">
 
   <!-- Markdown → HTML renderer -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.css">
@@ -31,19 +31,22 @@
       display: none; /* revealed after Markdown renders */
     }
 
-    /* ===== HEADER ===== */
+    /* ===== HEADER (3-column grid with centered photo) ===== */
     .header{
-      display: flex;
-      gap: 24px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr; /* left | photo | right */
       align-items: center;
-      justify-content: space-between;
+      gap: 24px;
       background: linear-gradient(110deg, var(--brand-1), var(--brand-2));
       padding: 28px;
       border-radius: 14px;
       color: #fff;
       margin-bottom: 20px;
     }
-    .header-left{ flex: 1 1 auto; }
+    .header-left{  justify-self: start; }
+    .header-center{ justify-self: center; }
+    .header-right{  justify-self: end; text-align: right; }
+
     .name{
       font-size: 2.15rem;
       font-weight: 700;
@@ -54,11 +57,7 @@
       color: rgba(255,255,255,0.9);
       font-size: 1rem;
     }
-    .header-right{
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
+
     .profile-pic{
       width: 170px;
       height: 170px;
@@ -69,10 +68,11 @@
       border: 3px solid rgba(255,255,255,0.85);
       box-shadow: 0 8px 18px rgba(0,0,0,0.18);
     }
+
     .contact{
-      text-align: right;
       font-size: 0.98rem;
       line-height: 1.6;
+      text-align: right;
     }
     .contact a{
       color:#fff;
@@ -125,7 +125,6 @@
 
     /* ===== PRINT (PDF/ATS) ===== */
     @media print{
-      /* Keep the headshot visible in PDF; simplify header for legibility */
       body{ background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .header{
         background: #fff !important;
@@ -140,12 +139,15 @@
     /* ===== RESPONSIVE ===== */
     @media (max-width: 640px){
       .header{
-        flex-direction: column-reverse;
-        align-items: flex-start;
+        grid-template-columns: 1fr;
         gap: 16px;
+        text-align: left;
       }
-      .contact{ text-align: left; }
+      .header-left{  justify-self: start; }
+      .header-center{ justify-self: start; }
+      .header-right{  justify-self: start; text-align: left; }
       .profile-pic{ width: 140px; height: 140px; }
+      .contact{ text-align: left; }
     }
   </style>
 </head>
@@ -154,48 +156,50 @@
   <header class="header" role="banner" aria-label="Resume header">
     <div class="header-left">
       <h1 class="name">Lionel Landucci</h1>
-      <p class="tagline">Head of Sensors / Senior Product Manager</p>
+      <p class="tagline">Senior Product Manager • Head of Sensors</p>
+    </div>
+
+    <div class="header-center">
+      <img src="LanducciLionel_Headshot.jpg" alt="Profile picture of Lionel Landucci" class="profile-pic" />
     </div>
 
     <div class="header-right">
-      <img src="LanducciLionel_Headshot.jpg" alt="Profile picture of Lionel Landucci" class="profile-pic" />
       <div class="contact" aria-label="Contact">
         <a href="mailto:landuccilionel@gmail.com">landuccilionel@gmail.com</a><br />
         +41 79 687 56 20<br />
         Zurich, Switzerland · Nationality: Swiss<br />
-        https://www.linkedin.com/in/lionel-landucci/
+        <a href="https://www.linkedin.com/in/lionel-landucci/">linkedin.com/in/lionel-landucci</a>
       </div>
     </div>
   </header>
-
+  
   <!-- MARKDOWN CONTENT -->
   <div id="card">
     <div id="md-content">
 ## Summary
-Head of Sensors / Senior Product Manager in industrial IoT hardware. Owns portfolio and 12-18 month roadmaps across HW/FW/Data/Test/Ops. Reduced false positives 90% (ML), saved ~CHF 1M, influenced ~CHF 3M order; leads a team of 4.
+**Senior Product Manager / Head of Sensors for connected devices & data products.** Owns portfolio and 12–18-month roadmaps across hardware, firmware, data, test, and operations. Reduced false positives **90%** (ML), saved **~CHF 1M**, secured **~CHF 3M** order; leads a team of **4**.
 
 ## Skills & Tools
-- **Product & Delivery:** Roadmapping (12–18 mo), Portfolio mgmt, Stage-Gate, Vendor & contract mgmt, Forecasting & inventory, Risk & dependency mgmt, OKRs
-- **Hardware / IoT:** Short-range (BLE, NFC, IEEE), GNSS (GPS/Galileo), OTA/FOTA & device provisioning, Sensors (accelerometer/gyro/temp/magnetometer/ultrasonic/radar/binary)
-- **Software & Platforms:** Product delivery with backend, frontend, and mobile teams; Microservices & event-driven systems; REST/gRPC/WebSocket APIs; Rule/trigger engines; Device twin/registry; OTA services & rollout policies (canary, staged, rollback); Time-series & telemetry dashboards
-- **Mobile & Frontend Collaboration:** BLE pairing & provisioning flows, Offline sync & retries, Push notification, Data visualization UX for sensor measurements (thresholds, hysteresis, debouncing)
-- **Data & Tools:** SQL, Python, Linux CLI, Grafana, Apache Superset, Airflow, AWS Athena, Git, Jira/Confluence
-- **Quality & Compliance:** QMS/ISMS, ISO 9001, ISO 27001, CE/RED, RoHS/REACH/WEEE, ATEX/IECEx, Supplier Quality, reliability & environmental (shock/vibration, IP67/68,X9K)
+- **Product Strategy & Delivery:** Roadmapping (12–18 mo), Portfolio mgmt, Stage-Gate, Risk & dependency mgmt, Vendor & contract mgmt, Forecasting & inventory, OKRs
+- **Software & Platforms:** Cross-functional delivery with backend, frontend & mobile; Microservices & event-driven systems; REST/gRPC/WebSocket APIs; Complex event/trigger engines; Digital twin/registry; OTA services & rollout policies (canary, staged, rollback); Time-series & telemetry dashboards
+- **APIs & Integrations:** API contracts & versioning (OpenAPI/JSON Schema), Backward compatibility & deprecation, Idempotency/retry semantics, Webhooks, AuthN/AuthZ (OAuth2/OIDC, JWT), Manufacturing/MES integrations (provisioning, serialization, key injection), Standardized device→cloud transmission schemas
+- **Data Platform & Analytics:** SQL, Python, Apache Superset, Grafana; Observability (alerting/SLOs); Time-series analysis & anomaly detection
+- **Quality & Compliance:** QMS/ISMS, ISO 9001, ISO 27001, Regulatory compliance (CE/RED; RoHS/REACH/WEEE), Supplier Quality, Reliability & environmental testing (shock/vibration, IP67/68)
 
 ## Working Experience
 #### Nexxiot AG — Head of Sensors  (Zurich, CH)  Jan 2024 - Present
 *Nexxiot is a TradeTech company enhancing global transportation with real-time visibility and analytics.*  
-- Lead a team of 4 and own portfolio strategy and **12–18 month roadmap** for multiple IoT sensor lines; coordinate **HW/FW/Data/Test/Ops** and suppliers through stage-gates.  
-- Built device-data KPI dashboards (SQL, Python) to monitor **fleet health** across regions, improving performance and reducing DOA and RMA rates.
-- Deployed **ML-based event classification** to production, lowering false positives **by 90%** and saving **~CHF 1M** in downstream operations.  
+- Lead a team of **4** and own multiple **device portfolio** & **12–18-month** roadmap; coordinate hardware/firmware/data/test/ops and suppliers through stage-gates.  
+- Built **fleet-health KPI dashboards** (SQL, Python); improved performance and reduced DOA/RMA rates across regions. Managed Fleet size: 30k, 1.6M CHF turnover.
+- Deployed **ML-based event classification** to production, cutting false positives **90%** and saving **~CHF 1M**.  
+- Orchestrated **OTA update service** with staged rollouts and automated rollback to reduce release risk.
 
 #### Nexxiot AG — Product Owner, Hardware  (Zurich, CH)  Jul 2020 - Dec 2023
-- Owned the **hardware portfolio** for customer-facing IoT sensors; partnered with app/data teams (back end, APIs, web, mobile) on end-to-end solutions.  
-- Led a **security-relevant cargo sensor** from requirements to pilot/validation to market; influenced a **multi-million-CHF** project order.
-- Designed alarm/trigger engine (thresholds, hysteresis, debouncing, suppression windows); cut false positives by 90% and improved on-call signal quality.
-
+- Owned the **hardware portfolio** for customer-facing services; partnered with backend, API, web & mobile teams on end-to-end solutions.  
+- Led a **security-grade monitoring device** from requirements to pilot/validation → market; secured a **multi-million-CHF** project order.
+      
 #### Nexxiot AG — Solution Manager  (Zurich, CH)  Oct 2019 - Jul 2020
-- Managed development and launch of an **IoT sensor for dangerous goods transport**; coordinated HW/FW/ops and customer pilots.  
+- Managed development and launch of a **connected device for regulated cargo**; coordinated engineering, operations, and customer pilots.  
 
 #### Nexxiot AG — Project Manager  (Zurich, CH)  Feb 2019 - Sep 2019
 - Built **QMS** and **ISMS** foundations; supported **ISO 9001/27001** audits across teams and locations.  
@@ -208,7 +212,6 @@ Head of Sensors / Senior Product Manager in industrial IoT hardware. Owns portfo
 ## Languages & Availability
 - **Languages:** German (native), English (fluent), French (advanced)  
 - **Availability:** 3 months’ notice
-
     </div>
   </div>
 
