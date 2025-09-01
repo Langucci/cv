@@ -167,7 +167,7 @@
       <div class="contact" aria-label="Contact">
         <a href="mailto:landuccilionel@gmail.com">landuccilionel@gmail.com</a><br />
         +41 79 687 56 20<br />
-        Zurich, Switzerland
+        Zurich, Switzerland<br />
         Nationality: Swiss<br />
         <a href="https://www.linkedin.com/in/lionel-landucci/">linkedin.com/in/lionel-landucci</a>
       </div>
@@ -222,40 +222,69 @@ Managed fleet of **~30k devices** over **+20 clients**; **~CHF 1.6M annual turno
   </div>
 
   <script>
-    // Robust Markdown -> HTML render:
-    // 1) Read raw text (not HTML)
-    // 2) De-indent common left spaces (prevents accidental code blocks)
-    // 3) Use casual-markdown if available; otherwise a tiny fallback for bold/headings/lists
+    // Render Markdown robustly, then post-process any leftover *...* or **...** in text nodes.
     window.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('md-content');
-      let mdText = container.textContent || container.innerText || '';
-      mdText = mdText.replace(/\r\n/g, '\n');
 
-      // De-indent common leading spaces so '##' and '**' parse correctly
+      // 1) Get raw text & normalize weird spaces/newlines so Markdown sees ** and *
+      let mdText = container.textContent || container.innerText || '';
+      mdText = mdText
+        .replace(/\r\n/g, '\n')
+        .replace(/[\u00A0\u202F\u2007\u2009\u200A\u200B]/g, ' '); // NBSP/thin/ZWSP -> space
+
+      // 2) De-indent common leading spaces so headings/bold aren't mistaken for code blocks
       const lines = mdText.split('\n');
-      const indents = lines
-        .filter(l => l.trim().length > 0)
-        .map(l => (l.match(/^\s*/)||[''])[0].length);
+      const indents = lines.filter(l => l.trim()).map(l => (l.match(/^\s*/)||[''])[0].length);
       const minIndent = indents.length ? Math.min.apply(null, indents) : 0;
       if (minIndent > 0) {
         mdText = lines.map(l => l.startsWith(' '.repeat(minIndent)) ? l.slice(minIndent) : l).join('\n');
       }
 
-      try {
-        if (window.md && typeof md.html === 'function') {
-          container.innerHTML = md.html(mdText);
-        } else {
-          // Minimal fallback (bold, h2/h4, lists, simple line breaks)
-          container.innerHTML = mdText
-            .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-            .replace(/^#### (.+)$/gm, '<h4>$1</h4>')
-            .replace(/^\- (.+)$/gm, '<li>$1</li>')
-            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-            .replace(/(?:\r?\n){2,}/g, '<br><br>');
-        }
-      } finally {
-        document.body.style.display = 'block';
+      // 3) Render via casual-markdown if available; else minimal fallback
+      if (window.md && typeof md.html === 'function') {
+        container.innerHTML = md.html(mdText);
+      } else {
+        container.innerHTML = mdText
+          .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+          .replace(/^#### (.+)$/gm, '<h4>$1</h4>')
+          .replace(/^\- (.+)$/gm, '<li>$1</li>')
+          .replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>')
+          .replace(/(^|[\s(])\*([^*\n][\s\S]*?)\*(?=[\s).,;!?]|$)/g, '$1<em>$2</em>')
+          .replace(/(?:\r?\n){2,}/g, '<br><br>');
       }
+
+      // 4) Post-pass on TEXT NODES ONLY: catch any remaining **...** or *...* (e.g., CHF1M, +20, 4FTE)
+      (function emphasiseLeftovers(root){
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+        const toReplace = [];
+        let n;
+        while ((n = walker.nextNode())) {
+          if (n.nodeValue && (n.nodeValue.includes('**') || /\s\*[^*].*?\*(?=[\s).,;!?]|$)/.test(n.nodeValue))) {
+            toReplace.push(n);
+          }
+        }
+        toReplace.forEach(node => {
+          const raw = node.nodeValue;
+
+          // Avoid touching inside code spans/backticks (not used in this CV)
+          let html = raw
+            .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+          // Bold: greedy but minimal — handles digits/symbols/no spaces
+          html = html.replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>');
+
+          // Italic: single * between word boundaries / punctuation
+          html = html.replace(/(^|[\s(])\*([^*\n][\s\S]*?)\*(?=[\s).,;!?]|$)/g, '$1<em>$2</em>');
+
+          if (html !== raw) {
+            const span = document.createElement('span');
+            span.innerHTML = html;
+            node.parentNode.replaceChild(span, node);
+          }
+        });
+      })(container);
+
+      document.body.style.display = 'block';
     });
   </script>
 </body>
