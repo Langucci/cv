@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Lionel Landucci – Resume</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Resume of Lionel Landucci — Head of Sensors / Senior Product Manager (IoT hardware, sensors, operations).">
 
   <!-- Markdown → HTML renderer -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.css">
@@ -16,6 +17,7 @@
       --ink:#1f2937;
       --muted:#6b7280;
       --bg:#f7f7f9;
+      --card:#ffffff;
     }
 
     body{
@@ -26,7 +28,7 @@
       max-width: 940px;
       padding: 20px 18px 48px;
       line-height: 1.7;
-      display: none;
+      display: none; /* revealed after Markdown renders */
     }
 
     /* ===== HEADER ===== */
@@ -60,10 +62,10 @@
     .profile-pic{
       width: 170px;
       height: 170px;
-      object-fit: cover;   /* back to cover mode */
+      object-fit: cover;
       border-radius: 50%;
       object-position: center 20%;
-      transform: scale(0.9); /* 0.9 = zoom out, 1 = normal, 1.1 = zoom in */
+      transform: scale(0.9);
       border: 3px solid rgba(255,255,255,0.85);
       box-shadow: 0 8px 18px rgba(0,0,0,0.18);
     }
@@ -80,23 +82,30 @@
     .contact a:hover{ border-bottom-color:#fff; }
 
     /* ===== MARKDOWN CONTENT ===== */
+    #card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
     h2{
       font-size: 1.25rem;
       color: var(--brand-1);
       border-bottom: 1px solid #e5e7eb;
       padding-bottom: 6px;
-      margin-top: 32px;
+      margin-top: 28px;
     }
     h3, h4{ margin-top: 18px; }
     ul{ margin: 10px 0 10px 22px; }
     li{ margin: 6px 0; }
     p{ margin: 10px 0; color: var(--ink); }
+    code{ background:#f0f4ff; padding:2px 6px; border-radius:6px; }
 
     /* ===== BUTTON ===== */
     .actions{
       display: flex;
       justify-content: center;
-      margin-top: 40px;
+      margin-top: 22px;
     }
     .btn{
       background: var(--brand-1);
@@ -114,6 +123,21 @@
       box-shadow: 0 10px 18px rgba(10,116,218,0.24);
     }
 
+    /* ===== PRINT (PDF/ATS) ===== */
+    @media print{
+      /* Keep colors for the headshot; keep header simple for legibility */
+      body{ background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .header{
+        background: #fff !important;
+        color: #000;
+        border: 1px solid #e5e7eb;
+      }
+      /* DO NOT HIDE THE PHOTO */
+      .contact a{ color: #000 !important; text-decoration: underline; border: 0; }
+      #card{ box-shadow: none; border: 0; padding-top: 0; }
+      .actions{ display: none; }
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 640px){
       .header{
@@ -128,58 +152,67 @@
 </head>
 <body>
   <!-- HEADER -->
-  <header class="header">
+  <header class="header" role="banner" aria-label="Resume header">
     <div class="header-left">
       <h1 class="name">Lionel Landucci</h1>
-      <p class="tagline">Product & Program Leader (IoT · Sensors · Operations)</p>
+      <p class="tagline">Head of Sensors / Senior Product Manager (IoT hardware)</p>
     </div>
 
     <div class="header-right">
       <img src="profilepiclarge.jpg" alt="Profile picture of Lionel Landucci" class="profile-pic" />
-      <div class="contact">
+      <div class="contact" aria-label="Contact">
         <a href="mailto:landuccilionel@gmail.com">landuccilionel@gmail.com</a><br />
         +41 79 687 56 20<br />
-        Nationality: Swiss
+        Zurich, Switzerland · Nationality: Swiss<br />
+        <a href="[https://www.linkedin.com/in/your-custom-url]">LinkedIn</a> · <a href="[https://github.com/your-github]">GitHub</a>
       </div>
     </div>
   </header>
 
   <!-- MARKDOWN CONTENT -->
-  <div id="md-content">
-## Executive Summary
-* 9 years of product/program experience in IoT (telematics/sensors) with strong focus on execution/operations  
-* Hands-on and proven experience in bringing devices from prototype to market  
+  <div id="card">
+    <div id="md-content">
+## Summary
+Head of Sensors / Senior Product Manager in **IoT hardware & sensors** with **9 years** of experience across rail & cargo telematics. Ships devices from prototype to scaled deployment across **HW/FW/Data/Test/Ops**. Repeatedly delivers cost/quality gains (e.g., **~CHF 1M** savings via ML classification; influenced **~CHF 3M** project order).  
+
+*Target keywords to swap per application:* hardware product management, NPI/NPD, supplier management, quality systems, ISO 9001/27001, device telemetry, fleet health, analytics dashboards, stakeholder management
+
+## Skills & Tools
+- **Product & Delivery:** Roadmapping, Portfolio management, Stakeholder management, OKRs, Agile/Scrum, Kanban, Stage-Gate, NPI/NPD, Go-to-market  
+- **Hardware / IoT:** Sensors, Embedded/Firmware collaboration, Connectivity (LTE-M, NB-IoT, BLE[; LoRa, GNSS if applicable]), Device telemetry, Field ops  
+- **Quality & Compliance:** QMS, ISMS, ISO 9001/27001 [; CE/FCC, EMC, ATEX/IECEx if applicable]  
+- **Data & Tools:** SQL, Python, Power BI/Tableau, Jira/Confluence, Git [; Looker/BigQuery if applicable]
 
 ## Working Experience
-#### Nexxiot AG (Head of Sensors, 2024/01 – present) 
-* Set the IoT sensor portfolio strategy and 12–18 month roadmap  
-* Led cross-functional delivery across hardware, firmware, data, test, ops, and suppliers  
-* Built end-to-end performance dashboards based on device data  
+#### Nexxiot AG — Head of Sensors  (Zurich, CH)  Jan 2024 - Present
+*Rail & cargo IoT / asset intelligence platform*  
+- Own portfolio strategy and **12–18 month roadmap** for **[x] IoT sensor SKUs**; align **HW/FW/Data/Test/Ops** and **[~N] suppliers** through stage-gates.  
+- Built device-data KPI dashboards (SQL + BI) to monitor **fleet health across [N] countries**, improving **DOA by [x%]** and **RMA by [y%]**.  
+- Drove cross-functional delivery from EVT/DVT/PVT to ramp; reduced **time-to-alpha by [~z%] YoY** through supplier and test-plan changes.  
+- Instituted **quality SLAs** with CMs; achieved **[r%] unit COGS** improvement via redesign + supplier consolidation.
 
-#### Nexxiot AG (Product Owner – Hardware, 2020/07 – 2023/12) 
-* Owned all customer-facing applications for the IoT sensor portfolio  
-* Led project for new security-relevant cargo monitoring sensor  
+#### Nexxiot AG — Product Owner, Hardware  (Zurich, CH)  Jul 2020 - Dec 2023
+- Owned **hardware portfolio** for customer-facing IoT sensors; partnered with software teams on apps & data products.  
+- Led program for a **security-relevant cargo monitoring sensor**; delivered pilot/validation and **influenced ~CHF 3M** project order after competitive RFP.  
+- Deployed **ML-based event classification** to production, lowering false positives **by [n%]** and **saving ~CHF 1M** in downstream operations.  
+- Managed suppliers and compliance; cut **lead time by [x%]** via BOM and test strategy updates.
 
-#### Nexxiot AG (Solution Manager, 2019/10 – 2020/07) 
-* Managed development and launch of IoT sensor for dangerous goods transport  
-* Bridged engineering and customer needs  
+#### Nexxiot AG — Solution Manager  (Zurich, CH)  Oct 2019 - Jul 2020
+- Managed development and launch of an **IoT sensor for dangerous goods transport**; coordinated HW/FW/ops and customer pilots.  
+- Bridged engineering and customer needs; authored requirements, test plans, and acceptance criteria; achieved **[certification or milestone]**.
 
-#### Nexxiot AG (Project Manager, 2019/02 – 2019/09) 
-* Built QMS and ISMS; supported ISO 9001/27001 audits  
-* Coordinated international shipments and logistics  
-
-## Major Contributions
-* Secured ~CHF 3 m project order that helped fund company growth  
-* Deployed ML-based classification to reduce errors and save ~CHF 1 M  
-* Created global sensor KPI dashboards to drive product improvement  
+#### Nexxiot AG — Project Manager  (Zurich, CH)  Feb 2019 - Sep 2019
+- Built **QMS** and **ISMS** foundations; supported **ISO 9001/27001** audits (scope: **[business units / sites]**).  
+- Coordinated international shipments and logistics, ensuring **[on-time rate / compliance metric]**.
 
 ## Education & Qualifications
-* BA Art History — University of Zurich (2015–2018)  
-* Matura (Science & Mathematics) — Kantonsschule Schaffhausen (2009–2013)  
+- **BA, Art History** — University of Zurich  (2015 - 2018)  
+- **Matura (Science & Mathematics)** — Kantonsschule Schaffhausen  (2009 - 2013)
 
-## Misc. Information
-* Languages: German (native), English (fluent), French (advanced)  
-* Availability: 3 months notice
+## Languages & Availability
+- **Languages:** German (native), English (fluent), French (advanced)  
+- **Availability:** 3 months’ notice
+    </div>
   </div>
 
   <!-- ACTIONS AT THE BOTTOM -->
