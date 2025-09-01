@@ -11,33 +11,32 @@
   <script src="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.js"></script>
 
   <style>
-    :root{
-      --brand-1:#0A74DA;
-      --brand-2:#00BFA6;
-      --ink:#1f2937;
-      --muted:#6b7280;
-      --bg:#fff;            /* force white page background */
-      --card:#ffffff;
+    :root {
+      --brand-1: #0A74DA;
+      --brand-2: #00BFA6;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --bg: #fff;
+      --card: #ffffff;
     }
 
-    html, body{
+    html, body {
       background: var(--bg);
     }
 
-    body{
+    body {
       font-family: "Segoe UI", Arial, sans-serif;
       color: var(--ink);
       margin: 0 auto;
       max-width: 940px;
-      padding: 20px 18px 24px;  /* tighter bottom padding */
+      padding: 20px 18px 24px;
       line-height: 1.7;
-      display: none; /* revealed after Markdown renders */
+      display: none;
     }
 
-    /* ===== HEADER (3-column grid with centered photo) ===== */
-    .header{
+    .header {
       display: grid;
-      grid-template-columns: 1fr auto 1fr; /* left | photo | right */
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
       gap: 24px;
       background: linear-gradient(110deg, var(--brand-1), var(--brand-2));
@@ -46,111 +45,119 @@
       color: #fff;
       margin-bottom: 20px;
     }
-    .header-left{  justify-self: start; }
-    .header-center{ justify-self: center; }
-    .header-right{  justify-self: end; text-align: right; }
 
-    .name{
+    .header-left { justify-self: start; }
+    .header-center { justify-self: center; }
+    .header-right { justify-self: end; text-align: right; }
+
+    .name {
       font-size: 2.15rem;
       font-weight: 700;
       margin: 0 0 6px 0;
     }
-    .tagline{
+
+    .tagline {
       margin: 0;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255, 255, 255, 0.9);
       font-size: 1rem;
     }
 
-    .profile-pic{
+    .profile-pic {
       width: 170px;
       height: 170px;
       object-fit: cover;
       border-radius: 50%;
       object-position: center 20%;
       transform: scale(0.9);
-      border: 3px solid rgba(255,255,255,0.85);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+      border: 3px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
     }
 
-    .contact{
+    .contact {
       font-size: 0.98rem;
       line-height: 1.6;
       text-align: right;
     }
-    .contact a{
-      color:#fff;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.35);
-    }
-    .contact a:hover{ border-bottom-color:#fff; }
 
-    /* ===== MARKDOWN CONTENT ===== */
+    .contact a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .contact a:hover { border-bottom-color: #fff; }
+
     #card {
       background: var(--card);
       border-radius: 14px;
       padding: 22px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
     }
-    h2{
+
+    h2 {
       font-size: 1.25rem;
       color: var(--brand-1);
       border-bottom: 1px solid #e5e7eb;
       padding-bottom: 6px;
       margin-top: 28px;
     }
-    h3, h4{ margin-top: 18px; }
-    ul{ margin: 10px 0 10px 22px; }
-    li{ margin: 6px 0; }
-    p{ margin: 10px 0; color: var(--ink); }
-    .keywords{ font-size: .95rem; color: var(--muted); }
+
+    h3, h4 { margin-top: 18px; }
+    ul { margin: 10px 0 10px 22px; }
+    li { margin: 6px 0; }
+    p { margin: 10px 0; color: var(--ink); }
+    .keywords { font-size: .95rem; color: var(--muted); }
 
     /* ===== BUTTON ===== */
-    .actions{
+    .actions {
       display: flex;
       justify-content: center;
-      margin-top: 18px;     /* inside card, small gap above button */
+      margin-top: 18px;
     }
-    .btn{
+
+    .btn {
       background: var(--brand-1);
       color: #fff;
       font-weight: 700;
       text-decoration: none;
       padding: 12px 22px;
       border-radius: 8px;
-      box-shadow: 0 6px 14px rgba(10,116,218,0.18);
+      box-shadow: 0 6px 14px rgba(10, 116, 218, 0.18);
       transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
     }
-    .btn:hover{
+
+    .btn:hover {
       transform: translateY(-1px);
       background: #0b6bca;
-      box-shadow: 0 10px 18px rgba(10,116,218,0.24);
+      box-shadow: 0 10px 18px rgba(10, 116, 218, 0.24);
     }
 
-    /* ===== PRINT (PDF/ATS) ===== */
-    @media print{
-      body{ background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .header{
+    @media print {
+      body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .header {
         background: #fff !important;
         color: #000;
         border: 1px solid #e5e7eb;
       }
-      .contact a{ color: #000 !important; text-decoration: underline; border: 0; }
-      #card{ box-shadow: none; border: 0; padding-top: 0; }
-      .actions{ display:none; } /* hide button in PDF */
+      .contact a { color: #000 !important; text-decoration: underline; border: 0; }
+      #card { box-shadow: none; border: 0; padding-top: 0; }
+      .actions { display: none; }
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 640px){
-      .header{
+    @media (max-width: 640px) {
+      .header {
         grid-template-columns: 1fr;
         gap: 16px;
         text-align: left;
       }
-      .header-left{  justify-self: start; }
-      .header-center{ justify-self: start; }
-      .header-right{  justify-self: start; text-align: left; }
-      .profile-pic{ width: 140px; height: 140px; }
-      .contact{ text-align: left; }
+      .header-left,
+      .header-center,
+      .header-right {
+        justify-self: start;
+        text-align: left;
+      }
+      .profile-pic { width: 140px; height: 140px; }
+      .contact { text-align: left; }
     }
   </style>
 </head>
@@ -217,26 +224,21 @@ Managed fleet of **~30k devices** over **+20 clients**; **~CHF 1.6M annual turno
 ## Languages & Availability
 - **Languages:** German (native), English (fluent), French (advanced)  
 - **Availability:** 3 months’ notice
-    </div>
 
-    <!-- Download button INSIDE the white card so no gray band below -->
-    <div class="actions">
-      <a class="btn" href="resume.pdf" download>Download PDF</a>
+<div class="actions">
+  <a class="btn" href="resume.pdf" download>Download PDF</a>
+</div>
     </div>
   </div>
 
   <script>
-    // Render Markdown robustly, then post-process any leftover *...* or **...** in text nodes.
     window.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('md-content');
-
-      // 1) Get raw text & normalize weird spaces/newlines so Markdown sees ** and *
       let mdText = container.textContent || container.innerText || '';
       mdText = mdText
         .replace(/\r\n/g, '\n')
-        .replace(/[\u00A0\u202F\u2007\u2009\u200A\u200B]/g, ' '); // NBSP/thin/ZWSP -> space
+        .replace(/[\u00A0\u202F\u2007\u2009\u200A\u200B]/g, ' ');
 
-      // 2) De-indent common leading spaces so headings/bold aren't mistaken for code blocks
       const lines = mdText.split('\n');
       const indents = lines.filter(l => l.trim()).map(l => (l.match(/^\s*/)||[''])[0].length);
       const minIndent = indents.length ? Math.min.apply(null, indents) : 0;
@@ -244,7 +246,6 @@ Managed fleet of **~30k devices** over **+20 clients**; **~CHF 1.6M annual turno
         mdText = lines.map(l => l.startsWith(' '.repeat(minIndent)) ? l.slice(minIndent) : l).join('\n');
       }
 
-      // 3) Render via casual-markdown if available; else minimal fallback
       if (window.md && typeof md.html === 'function') {
         container.innerHTML = md.html(mdText);
       } else {
@@ -257,7 +258,6 @@ Managed fleet of **~30k devices** over **+20 clients**; **~CHF 1.6M annual turno
           .replace(/(?:\r?\n){2,}/g, '<br><br>');
       }
 
-      // 4) Post-pass on TEXT NODES ONLY: catch any remaining **...** or *...* (e.g., CHF1M, +20, 4FTE)
       (function emphasiseLeftovers(root){
         const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
         const toReplace = [];
@@ -269,15 +269,9 @@ Managed fleet of **~30k devices** over **+20 clients**; **~CHF 1.6M annual turno
         }
         toReplace.forEach(node => {
           const raw = node.nodeValue;
-
-          // Avoid touching inside code spans/backticks (not used in this CV)
           let html = raw
             .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-
-          // Bold: handles digits/symbols/no spaces
           html = html.replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>');
-
-          // Italic: single * between word boundaries / punctuation
           html = html.replace(/(^|[\s(])\*([^*\n][\s\S]*?)\*(?=[\s).,;!?]|$)/g, '$1<em>$2</em>');
 
           if (html !== raw) {
