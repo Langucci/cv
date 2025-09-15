@@ -173,27 +173,24 @@
 
       #card { padding: 0 !important; box-shadow: none !important; border: 0 !important; }
 
-      /* --- UMBRUCH-REGELN: Überschriften mit Folgeblock zusammenhalten --- */
+      /* --- UMBRUCH-REGELN: h2/h3/h4 mit Folgeblock zusammenhalten --- */
       #md-content h2,
-      #md-content h3 {
+      #md-content h3,
+      #md-content h4 {
         break-after: avoid-page;
         page-break-after: avoid;
       }
-      #md-content h2 + p,
-      #md-content h2 + ul,
-      #md-content h2 + ol,
-      #md-content h2 + div,
-      #md-content h3 + p,
-      #md-content h3 + ul,
-      #md-content h3 + ol,
-      #md-content h3 + div {
+      #md-content h2 + p, #md-content h2 + ul, #md-content h2 + ol, #md-content h2 + div,
+      #md-content h3 + p, #md-content h3 + ul, #md-content h3 + ol, #md-content h3 + div,
+      #md-content h4 + p, #md-content h4 + ul, #md-content h4 + ol, #md-content h4 + div {
         break-before: avoid-page;
         page-break-before: avoid;
       }
-      /* Falls per JS markiert */
-      .keep-with-prev {
-        break-before: avoid-page;
-        page-break-before: avoid;
+
+      /* Ganze Jobblöcke (per JS-Wrapper) möglichst nicht trennen */
+      .section-block {
+        break-inside: avoid;
+        page-break-inside: avoid;
       }
 
       /* Längere Blöcke möglichst nicht teilen */
@@ -259,7 +256,7 @@
         <a href="mailto:landuccilionel@gmail.com">landuccilionel@gmail.com</a><br />
         +41 79 687 56 20<br />
         Zürich, Schweiz<br />
-        Nationalität: Schweizer<br />
+        Nationalität: Schweiz<br />
         <a href="https://www.linkedin.com/in/lionel-landucci/">linkedin.com/in/lionel-landucci</a>
       </div>
     </div>
@@ -274,7 +271,7 @@
     </div>
   </div>
 
-  <!-- JS: Markdown rendern -->
+  <!-- JS: Markdown rendern + Job-Abschnitte wrappen -->
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const mdText = `
@@ -285,14 +282,14 @@ Reduzierte **Fehlalarme um 90% (ML)**, erzielte Einsparungen von **CHF 1 Mio.** 
 
 ## Kompetenzen & Tools
 - **Produktstrategie & Umsetzung:** Roadmapping (12–18 Monate), Portfolio- & Projektmanagement, Stage-Gate, Risiko- & Abhängigkeitsmanagement, Lieferanten- & Vertragsmanagement, Forecasting & Bestandsplanung, OKRs  
-- **Software & Plattformen:** Bereichsübergreifende Produktentwicklung mit Backend, Frontend & Mobile; Microservices & ereignisgetriebene Architekturen, Ereignis-/Trigger-Engines, OTA-Services & Rollout-Strategien, Telemetrie- & Zeitreihen-Dashboards  
+- **Software & Plattformen:** Bereichsübergreifende Produktentwicklung mit Backend, Frontend & Mobile, Microservices & ereignisgetriebene Architekturen, Ereignis-/Trigger-Engines, OTA-Services & Rollout-Strategien, Telemetrie- & Zeitreihen-Dashboards  
 - **Datenplattform & Analytics:** SQL, Python, Apache Superset, Zeitreihenanalyse & Anomalieerkennung  
-- **Qualität & Compliance:** QMS/ISMS, ISO 9001, ISO 27001, Konformität (CE/RED; RoHS/REACH/WEEE), Lieferantenqualität, Zuverlässigkeits- & Umweltprüfungen (Schock/Vibration, **IP67/68**)
+- **Qualität & Compliance:** QMS/ISMS, ISO 9001, ISO 27001, Konformität (CE/RED, RoHS/REACH/WEEE), Lieferantenqualität, Zuverlässigkeits- & Umweltprüfungen (Schock/Vibration, **IP67/68**)
 
 ## Berufserfahrung
 #### Nexxiot AG — Leiter Sensorik  (Zürich, CH)  Jan 2024 – heute  
 *Nexxiot ist ein TradeTech-Unternehmen für Echtzeit-Transparenz & Analytics in der globalen Logistik.*  
-- Leitung von **4 VZÄ (FTE)**; Verantwortung für ein **Multi-SKU-Geräteportfolio** und die **12–18-Monats-Roadmap**; Koordination von Hardware/Firmware/Daten/Test/Operations sowie Lieferanten entlang der Stage-Gates.  
+- Leitung von **4 VZÄ (FTE)**, Verantwortung für ein **Multi-SKU-Geräteportfolio** und die **12–18-Monats-Roadmap**, Koordination von Hardware/Firmware/Daten/Test/Operations sowie Lieferanten entlang der Stage-Gates.  
 - Aufbau von **Fleet-Health-KPI-Dashboards** (SQL, Python), verbesserte Performance und reduzierte DOA/RMA-Quoten.  
 - Produktiveinführung einer **ML-basierten Ereignisklassifikation** mit Einsparungen von über **CHF 1 Mio.**  
 - Etablierung eines **OTA-Update-Services** mit gestaffelten Rollouts und automatischem Rollback.
@@ -302,7 +299,7 @@ Reduzierte **Fehlalarme um 90% (ML)**, erzielte Einsparungen von **CHF 1 Mio.** 
 - Führung eines **sicherheitskritischen Monitoring-Geräts** von Anforderung über Pilot/Validierung bis zum Markt, **Auftrag im mehrmillionigen CHF-Bereich**.
 
 #### Nexxiot AG — Solution Manager  (Zürich, CH)  Okt 2019 – Jul 2020  
-- Entwicklung und Launch eines **IoT Sensors** für regulierte Transporte; Koordination von Engineering, Operations und Kundenpiloten.  
+- Entwicklung und Launch eines **IoT Sensors** für regulierte Transporte, Koordination von Engineering, Operations und Kundenpiloten.  
 
 #### Nexxiot AG — Projektmanager  (Zürich, CH)  Feb 2019 – Sep 2019  
 - Aufbau von **QMS** und **ISMS**, Unterstützung von **ISO 9001/27001**-Audits standortübergreifend.  
@@ -322,12 +319,33 @@ Reduzierte **Fehlalarme um 90% (ML)**, erzielte Einsparungen von **CHF 1 Mio.** 
         container.innerHTML = md.html(mdText);
       }
 
-      /* OPTIONAL: Erste Folgebox nach jeder Überschrift markieren (zusätzliche Sicherheit gegen Umbrüche) */
-      (function keepHeadingsWithNext() {
-        const hSel = '#md-content h2, #md-content h3';
-        document.querySelectorAll(hSel).forEach(h => {
-          const next = h.nextElementSibling;
-          if (next) next.classList.add('keep-with-prev');
+      /* --- Job-Abschnitte wrappen: h4 + Folgeinhalte bis zum nächsten h2/h3/h4 --- */
+      (function wrapJobSections() {
+        const root = document.getElementById('md-content');
+        if (!root) return;
+
+        const isHeadingStop = el =>
+          el && el.matches && el.matches('#md-content h2, #md-content h3, #md-content h4');
+
+        const h4s = Array.from(root.querySelectorAll('h4')); // Jobtitel
+        h4s.forEach(h => {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'section-block';
+          h.parentNode.insertBefore(wrapper, h);
+
+          // move h4 and following siblings until next h2/h3/h4
+          let cur = h;
+          while (cur && !isHeadingStop(cur.previousElementSibling) && cur !== wrapper) {
+            // no-op to satisfy linter, we'll move below
+            break;
+          }
+          while (cur && !isHeadingStop(cur) || cur === h) {
+            const next = cur.nextElementSibling;
+            wrapper.appendChild(cur);
+            if (!next) break;
+            if (isHeadingStop(next)) break;
+            cur = next;
+          }
         });
       })();
     });
