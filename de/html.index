@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lionel Landucci – Lebenslauf</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Lebenslauf von Lionel Landucci — Senior Product Manager / Leiter Sensoren für vernetzte Geräte & Datenprodukte.">
+
+  <!-- hreflang -->
+  <link rel="alternate" href="https://langucci.github.io/cv/" hreflang="en" />
+  <link rel="alternate" href="https://langucci.github.io/cv/de/" hreflang="de-CH" />
+  <link rel="alternate" href="https://langucci.github.io/cv/de/" hreflang="de" />
+
+  <!-- Markdown → HTML -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.css">
+  <script src="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.js"></script>
+
+  <style>
+    :root{ --brand-1:#0A74DA; --brand-2:#00BFA6; --ink:#1f2937; --muted:#6b7280; --bg:#fff; --card:#ffffff; }
+    html,body{ background:#fff; }
+    body{
+      font-family:"Segoe UI",Arial,sans-serif; color:var(--ink);
+      margin:0 auto; max-width:940px; padding:20px 18px 24px; line-height:1.7;
+      display:none;
+    }
+    .header{
+      display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:24px;
+      background:linear-gradient(110deg,var(--brand-1),var(--brand-2));
+      padding:28px; border-radius:14px; color:#fff; margin-bottom:12px;
+    }
+    .name{ font-size:2.15rem; font-weight:700; margin:0 0 6px 0; }
+    .tagline{ margin:0; color:rgba(255,255,255,0.9); font-size:1rem; }
+    .header-left{ justify-self:start; }
+    .header-center{ justify-self:center; }
+    .header-right{ justify-self:end; text-align:right; }
+    .profile-pic{
+      width:170px; height:170px; object-fit:cover; border-radius:50%; object-position:center 20%;
+      transform:scale(0.9); border:3px solid rgba(255,255,255,0.85); box-shadow:0 8px 18px rgba(0,0,0,0.18);
+    }
+    .contact{ font-size:.98rem; line-height:1.6; text-align:right; }
+    .contact a{ color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.35); }
+    .contact a:hover{ border-bottom-color:#fff; }
+
+    /* Sprachumschalter */
+    .lang-switch { text-align:center; margin:10px 0 18px; font-size:.95rem; color:var(--muted); }
+    .lang-switch a{ color:var(--brand-1); text-decoration:none; }
+    .lang-switch a:hover{ text-decoration:underline; }
+
+    #card{ background:var(--card); border-radius:14px; padding:22px; box-shadow:0 6px 16px rgba(0,0,0,0.06); }
+    h2{ font-size:1.25rem; color:var(--brand-1); border-bottom:1px solid #e5e7eb; padding-bottom:6px; margin-top:28px; }
+    h3,h4{ margin-top:18px; }
+    ul{ margin:10px 0 10px 22px; }
+    li{ margin:6px 0; }
+    p{ margin:10px 0; color:var(--ink); }
+
+    .actions{ display:flex; justify-content:center; margin-top:18px; }
+    .btn{
+      background:var(--brand-1); color:#fff; font-weight:700; text-decoration:none;
+      padding:12px 22px; border-radius:8px; box-shadow:0 6px 14px rgba(10,116,218,0.18);
+      transition:transform .06s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:hover{ transform:translateY(-1px); background:#0b6bca; box-shadow:0 10px 18px rgba(10,116,218,0.24); }
+
+    @media print{
+      .header{ background:#fff !important; color:#000; border:1px solid #e5e7eb; }
+      .contact a{ color:#000 !important; text-decoration:underline; border:0; }
+      #card{ box-shadow:none; border:0; padding-top:0; }
+      .actions{ display:none; }
+    }
+    @media (max-width:640px){
+      .header{ grid-template-columns:1fr; gap:16px; text-align:left; }
+      .header-left,.header-center,.header-right{ justify-self:start; text-align:left; }
+      .profile-pic{ width:140px; height:140px; }
+      .contact{ text-align:left; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" role="banner" aria-label="Lebenslauf-Kopf">
+    <div class="header-left">
+      <h1 class="name">Lionel Landucci</h1>
+      <p class="tagline">Senior Product Manager • Leiter Sensoren</p>
+    </div>
+    <div class="header-center">
+      <img src="../LanducciLionel_Headshot.jpg" alt="Porträt von Lionel Landucci" class="profile-pic" />
+    </div>
+    <div class="header-right">
+      <div class="contact" aria-label="Kontakt">
+        <a href="mailto:landuccilionel@gmail.com">landuccilionel@gmail.com</a><br />
+        +41 79 687 56 20<br />
+        Zürich, Schweiz<br />
+        Nationalität: Schweizer<br />
+        <a href="https://www.linkedin.com/in/lionel-landucci/">linkedin.com/in/lionel-landucci</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="lang-switch">
+    <a href="../">EN</a> · <strong>DE</strong>
+  </div>
+
+  <div id="card">
+    <div id="md-content">
+## Zusammenfassung
+**Senior Product Manager / Leiter Sensoren für vernetzte Geräte & Datenprodukte.** Verantwortet Portfolio und **12–18-Monats-Roadmaps** über Hardware, Firmware, Daten, Test und Betrieb. Verwaltete **~30k Geräte** bei **20+ Kunden**; **~CHF 1.6 M Jahresumsatz**. Reduzierte Fehlalarme **um 90%** (ML), sparte **~CHF 1 M**, gewann Auftrag über **~CHF 3 M**; Führung von **4 FTE (VZÄ)**.
+
+## Kompetenzen & Tools
+- **Produktstrategie & Umsetzung:** Roadmapping (12–18 Monate), Portfolio- & Projektmanagement, Stage-Gate, Risiko- & Abhängigkeitsmanagement, Lieferanten- & Vertragsmanagement, Forecasting & Bestandsplanung, OKRs
+- **Software & Plattformen:** Cross-functional Delivery mit Backend, Frontend & Mobile; Microservices & Event-Driven; Ereignis-/Trigger-Engines; OTA-Services & Rollout-Policies; Telemetrie-/Zeitreihen-Dashboards
+- **Datenplattform & Analytics:** SQL, Python, Apache Superset; Zeitreihenanalyse & Anomalieerkennung
+- **Qualität & Compliance:** QMS/ISMS, ISO 9001, ISO 27001, Konformität (CE/RED; RoHS/REACH/WEEE), Lieferantenqualität, Zuverlässigkeit & Umweltprüfungen (Schock/Vibration, **IP67/68**)
+
+## Berufserfahrung
+#### Nexxiot AG — Leiter Sensoren  (Zürich, CH)  Jan 2024 - Heute
+*Nexxiot ist ein TradeTech-Unternehmen für Echtzeit-Transparenz & Analytics in der globalen Logistik.*  
+- Leitung eines Teams von **4 FTE**; Verantwortung für **Multi-SKU-Geräteportfolio** & **12–18-Monats-Roadmap**; Koordination von Hardware/Firmware/Daten/Test/Operations und Lieferanten entlang Stage-Gates.  
+- Aufbau von **Fleet-Health KPI-Dashboards** (SQL, Python); verbesserte Performance und reduzierte DOA/RMA-Quoten.  
+- Produktiveinführung **ML-basierter Ereignisklassifikation**; Fehlalarme **–90%**, Einsparungen **~CHF 1 M**.  
+- Etablierung eines **OTA-Update-Services** mit gestaffelten Rollouts und automatischem Rollback.
+
+#### Nexxiot AG — Product Owner Hardware  (Zürich, CH)  Jul 2020 - Dez 2023
+- Verantwortlich für das **Hardware-Portfolio** der kundenseitigen Sensorservices; enge Zusammenarbeit mit Backend, APIs, Web & Mobile.  
+- Leitung eines **sicherheitskritischen Monitoring-Geräts** von Anforderung über Pilot/Validierung bis zum Markt; **Auftrag im Multi-Mio-CHF-Bereich**.
+
+#### Nexxiot AG — Solution Manager  (Zürich, CH)  Okt 2019 - Jul 2020
+- Entwicklung & Launch eines **Connected Device** für regulierte Transporte; Koordination von Engineering, Operations und Kundenpiloten.  
+
+#### Nexxiot AG — Projektmanager  (Zürich, CH)  Feb 2019 - Sep 2019
+- Aufbau von **QMS** und **ISMS**; Unterstützung von **ISO 9001/27001**-Audits in Teams und Standorten.  
+- Steuerung internationaler Lieferungen & Logistik, termingerecht und compliant.
+
+## Ausbildung & Abschlüsse
+- **BA, Kunstgeschichte** — Universität Zürich  (2015 - 2018)  
+- **Militärdienst:** Schweizer Armee — obligatorischer Dienst (2013 - 2014)
+- **Matura (Naturwissenschaften & Mathematik)** — Kantonsschule Schaffhausen  (2009 - 2013)
+
+## Sprachen & Verfügbarkeit
+- **Sprachen:** Deutsch (Muttersprache), Englisch (fliessend), Französisch (fortgeschritten)  
+- **Verfügbarkeit:** Kündigungsfrist 3 Monate
+    </div>
+
+    <div class="actions">
+      <a class="btn" href="lebenslauf.pdf" download>PDF herunterladen</a>
+    </div>
+  </div>
+
+  <script>
+    // Gleiche robuste Markdown-Logik wie in deiner EN-Seite
+    window.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('md-content');
+      let mdText = container.textContent || container.innerText || '';
+      mdText = mdText.replace(/\r\n/g, '\n').replace(/[\u00A0\u202F\u2007\u2009\u200A\u200B]/g, ' ');
+      const lines = mdText.split('\n');
+      const indents = lines.filter(l => l.trim()).map(l => (l.match(/^\s*/)||[''])[0].length);
+      const minIndent = indents.length ? Math.min.apply(null, indents) : 0;
+      if (minIndent > 0) mdText = lines.map(l => l.startsWith(' '.repeat(minIndent)) ? l.slice(minIndent) : l).join('\n');
+
+      if (window.md && typeof md.html === 'function') {
+        container.innerHTML = md.html(mdText);
+      } else {
+        container.innerHTML = mdText
+          .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+          .replace(/^#### (.+)$/gm, '<h4>$1</h4>')
+          .replace(/^\- (.+)$/gm, '<li>$1</li>')
+          .replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>')
+          .replace(/(^|[\s(])\*([^*\n][\s\S]*?)\*(?=[\s).,;!?]|$)/g, '$1<em>$2</em>')
+          .replace(/(?:\r?\n){2,}/g, '<br><br>');
+      }
+
+      (function emphasiseLeftovers(root){
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+        const toReplace = []; let n;
+        while ((n = walker.nextNode())) {
+          if (n.nodeValue && (n.nodeValue.includes('**') || /\s\*[^*].*?\*(?=[\s).,;!?]|$)/.test(n.nodeValue))) toReplace.push(n);
+        }
+        toReplace.forEach(node => {
+          const raw = node.nodeValue;
+          let html = raw.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+          html = html.replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>');
+          html = html.replace(/(^|[\s(])\*([^*\n][\s\S]*?)\*(?=[\s).,;!?]|$)/g, '$1<em>$2</em>');
+          if (html !== raw) { const span = document.createElement('span'); span.innerHTML = html; node.parentNode.replaceChild(span, node); }
+        });
+      })(container);
+
+      document.body.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
