@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Lebenslauf von Lionel Landucci — Senior Product Manager / Leiter Sensoren für vernetzte Geräte & Datenprodukte.">
 
-  <!-- hreflang -->
+  <!-- hreflang: verweisen auf EN- und DE-Version -->
   <link rel="alternate" href="https://langucci.github.io/cv/" hreflang="en" />
   <link rel="alternate" href="https://langucci.github.io/cv/de/" hreflang="de-CH" />
   <link rel="alternate" href="https://langucci.github.io/cv/de/" hreflang="de" />
+  <link rel="alternate" href="https://langucci.github.io/cv/" hreflang="x-default" />
 
   <!-- Markdown → HTML -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/casualwriter/casual-markdown/dist/casual-markdown.css">
@@ -19,20 +20,23 @@
     :root{ --brand-1:#0A74DA; --brand-2:#00BFA6; --ink:#1f2937; --muted:#6b7280; --bg:#fff; --card:#ffffff; }
     html,body{ background:#fff; }
     body{
-      font-family:"Segoe UI",Arial,sans-serif; color:var(--ink);
+      font-family:"Segoe UI", Arial, sans-serif; color:var(--ink);
       margin:0 auto; max-width:940px; padding:20px 18px 24px; line-height:1.7;
-      display:none;
+      display:none; /* zeigen, wenn Markdown gerendert */
     }
+
+    /* HEADER (3-Spalten-Grid, Foto mittig) */
     .header{
       display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:24px;
       background:linear-gradient(110deg,var(--brand-1),var(--brand-2));
       padding:28px; border-radius:14px; color:#fff; margin-bottom:12px;
     }
-    .name{ font-size:2.15rem; font-weight:700; margin:0 0 6px 0; }
-    .tagline{ margin:0; color:rgba(255,255,255,0.9); font-size:1rem; }
     .header-left{ justify-self:start; }
     .header-center{ justify-self:center; }
     .header-right{ justify-self:end; text-align:right; }
+    .name{ font-size:2.15rem; font-weight:700; margin:0 0 6px 0; }
+    .tagline{ margin:0; color:rgba(255,255,255,0.9); font-size:1rem; }
+
     .profile-pic{
       width:170px; height:170px; object-fit:cover; border-radius:50%; object-position:center 20%;
       transform:scale(0.9); border:3px solid rgba(255,255,255,0.85); box-shadow:0 8px 18px rgba(0,0,0,0.18);
@@ -42,10 +46,11 @@
     .contact a:hover{ border-bottom-color:#fff; }
 
     /* Sprachumschalter */
-    .lang-switch { text-align:center; margin:10px 0 18px; font-size:.95rem; color:var(--muted); }
+    .lang-switch{ text-align:center; margin:10px 0 18px; font-size:.95rem; color:var(--muted); }
     .lang-switch a{ color:var(--brand-1); text-decoration:none; }
     .lang-switch a:hover{ text-decoration:underline; }
 
+    /* Content Card */
     #card{ background:var(--card); border-radius:14px; padding:22px; box-shadow:0 6px 16px rgba(0,0,0,0.06); }
     h2{ font-size:1.25rem; color:var(--brand-1); border-bottom:1px solid #e5e7eb; padding-bottom:6px; margin-top:28px; }
     h3,h4{ margin-top:18px; }
@@ -53,20 +58,24 @@
     li{ margin:6px 0; }
     p{ margin:10px 0; color:var(--ink); }
 
+    /* Button */
     .actions{ display:flex; justify-content:center; margin-top:18px; }
     .btn{
       background:var(--brand-1); color:#fff; font-weight:700; text-decoration:none;
       padding:12px 22px; border-radius:8px; box-shadow:0 6px 14px rgba(10,116,218,0.18);
-      transition:transform .06s ease, box-shadow .2s ease, background .2s ease;
+      transition:transform .06s, box-shadow .2s, background .2s;
     }
     .btn:hover{ transform:translateY(-1px); background:#0b6bca; box-shadow:0 10px 18px rgba(10,116,218,0.24); }
 
+    /* Print */
     @media print{
       .header{ background:#fff !important; color:#000; border:1px solid #e5e7eb; }
       .contact a{ color:#000 !important; text-decoration:underline; border:0; }
       #card{ box-shadow:none; border:0; padding-top:0; }
       .actions{ display:none; }
     }
+
+    /* Mobile */
     @media (max-width:640px){
       .header{ grid-template-columns:1fr; gap:16px; text-align:left; }
       .header-left,.header-center,.header-right{ justify-self:start; text-align:left; }
@@ -82,6 +91,7 @@
       <p class="tagline">Senior Product Manager • Leiter Sensoren</p>
     </div>
     <div class="header-center">
+      <!-- Bild liegt eine Ebene höher als /cv/de/ -->
       <img src="../LanducciLionel_Headshot.jpg" alt="Porträt von Lionel Landucci" class="profile-pic" />
     </div>
     <div class="header-right">
@@ -95,6 +105,7 @@
     </div>
   </header>
 
+  <!-- Sprachumschalter -->
   <div class="lang-switch">
     <a href="../">EN</a> · <strong>DE</strong>
   </div>
@@ -113,7 +124,7 @@
 ## Berufserfahrung
 #### Nexxiot AG — Leiter Sensoren  (Zürich, CH)  Jan 2024 - Heute
 *Nexxiot ist ein TradeTech-Unternehmen für Echtzeit-Transparenz & Analytics in der globalen Logistik.*  
-- Leitung eines Teams von **4 FTE**; Verantwortung für **Multi-SKU-Geräteportfolio** & **12–18-Monats-Roadmap**; Koordination von Hardware/Firmware/Daten/Test/Operations und Lieferanten entlang Stage-Gates.  
+- Leitung eines Teams von **4 FTE**; Verantwortung für **Multi-SKU-Geräteportfolio** & **12–18-Monats-Roadmap**; Koordination von Hardware/Firmware/Daten/Test/Operations sowie Lieferanten entlang Stage-Gates.  
 - Aufbau von **Fleet-Health KPI-Dashboards** (SQL, Python); verbesserte Performance und reduzierte DOA/RMA-Quoten.  
 - Produktiveinführung **ML-basierter Ereignisklassifikation**; Fehlalarme **–90%**, Einsparungen **~CHF 1 M**.  
 - Etablierung eines **OTA-Update-Services** mit gestaffelten Rollouts und automatischem Rollback.
@@ -126,7 +137,7 @@
 - Entwicklung & Launch eines **Connected Device** für regulierte Transporte; Koordination von Engineering, Operations und Kundenpiloten.  
 
 #### Nexxiot AG — Projektmanager  (Zürich, CH)  Feb 2019 - Sep 2019
-- Aufbau von **QMS** und **ISMS**; Unterstützung von **ISO 9001/27001**-Audits in Teams und Standorten.  
+- Aufbau von **QMS** und **ISMS**; Unterstützung von **ISO 9001/27001**-Audits standortübergreifend.  
 - Steuerung internationaler Lieferungen & Logistik, termingerecht und compliant.
 
 ## Ausbildung & Abschlüsse
@@ -140,12 +151,13 @@
     </div>
 
     <div class="actions">
+      <!-- Deutsche PDF im selben Ordner ablegen: /cv/de/lebenslauf.pdf -->
       <a class="btn" href="lebenslauf.pdf" download>PDF herunterladen</a>
     </div>
   </div>
 
   <script>
-    // Gleiche robuste Markdown-Logik wie in deiner EN-Seite
+    // Markdown robust rendern + Fallback für **Fettdruck**
     window.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('md-content');
       let mdText = container.textContent || container.innerText || '';
@@ -167,6 +179,7 @@
           .replace(/(?:\r?\n){2,}/g, '<br><br>');
       }
 
+      // Post-Pass: restliche **...**/*...* in Textknoten fett/kursiv setzen
       (function emphasiseLeftovers(root){
         const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
         const toReplace = []; let n;
