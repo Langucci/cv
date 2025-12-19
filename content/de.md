@@ -1,11 +1,11 @@
 ## Profil
 Product Owner mit über 6 Jahren Erfahrung in der Umsetzung komplexer, hardwaregestützter Produkte in regulierten Enterprise-Umfeldern.
-Verantwortlich für die Umsetzung von Produktportfolios über Hardware, Software, Datenplattformen und Betrieb hinweg.
-Verantwortung für ein Umsatzvolumen von CHF 1.6 Mio. im letzten Geschäftsjahr, Vermeidung einer Hardware-Abschreibung von CHF 1 Mio. sowie Leitung der Umsetzung eines Enterprise-Vertrags über CHF 4 Mio.
+Verantwortlich für die Umsetzung von Produktportfolios über Hardware und Software hinweg.
+Verantwortung für ein Umsatzvolumen von CHF 1.6 Mio. im letzten Geschäftsjahr, Vermeidung einer Hardware-Abschreibung von CHF 1 Mio. sowie Leitung eines Enterprise-Vertrags über CHF 4 Mio.
 
 ## Kompetenzen
 Produktverantwortung, Roadmaps, Priorisierung, bereichsübergreifende Zusammenarbeit  
-Datenplattformen und APIs, Produktivsetzungen, Systemüberwachung, KPI-Dashboards  
+Datenplattformen und APIs, Systemüberwachung, KPI-Dashboards  
 SQL und Python, Anomalieerkennung, regulatorische und Compliance-Unterstützung
 
 ## Berufserfahrung
@@ -13,9 +13,9 @@ SQL und Python, Anomalieerkennung, regulatorische und Compliance-Unterstützung
 ### Nexxiot AG, Product Owner | Zürich, Schweiz | Jul 2020 – Heute
 
 - Verantwortung für die Umsetzung des Sensordaten-Ökosystems von der Geräteanbindung bis zu kundenseitigen Anwendungen und dem Betrieb.
-- Koordination mehrerer paralleler Vorhaben inkl. Priorisierung und Abstimmung von Abhängigkeiten über Teams hinweg mit einem Planungshorizont von 12–18 Monaten.
+- Koordination paralleler Vorhaben inkl. Priorisierung und Abstimmung von Abhängigkeiten über Teams hinweg mit einem Planungshorizont von 12–18 Monaten.
 - Leitung eines langfristigen, sicherheitskritischen Sensorprodukts von der Anforderungsdefinition bis zur Produktreife als Hauptansprechperson für Enterprise-Kunden und externe Partner; Umsetzung eines Vertrags über CHF 4 Mio.
-- Konzeption und Betrieb von Dashboards zur Überwachung der Flottengesundheit und relevanter Leistungskennzahlen, zur Erkennung von Datenanomalien sowie zur Nachverfolgung von Software- und Firmware-Rollouts.
+- Konzeption und Betrieb von Dashboards zur Überwachung der Flottengesundheit, Erkennung von Datenanomalien und Nachverfolgung von Software- und Firmware-Rollouts.
 - Umsetzung einer produktionsreifen, ML-gestützten Klassifikationslösung zur Vermeidung einer Hardware-Abschreibung von CHF 1 Mio.
 
 ### Nexxiot AG, Solution Manager | Zürich, Schweiz | Okt 2019 – Jul 2020
