@@ -1,9 +1,9 @@
-name: Build resume.pdf
+name: Build resume PDFs
 
 on:
   push:
-    branches: ["main"]
-  workflow_dispatch:
+    branches:
+      - main
 
 permissions:
   contents: write
@@ -11,23 +11,47 @@ permissions:
 jobs:
   pdf:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - run: npm install
-      - run: npx playwright install --with-deps chromium
+      - name: Install dependencies
+        run: |
+          npm ci || npm install
+          npx playwright install --with-deps chromium
 
-      - run: npm run pdf
+      - name: Generate PDFs
+        run: |
+          node --version
+          npm --version
+          echo "Running PDF renderer…"
+          node scripts/render-pdf.mjs
 
-      - name: Commit updated PDF
+      # Always upload debug output (even on failure)
+      - name: Upload debug artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug
+          path: |
+            debug_en.png
+            debug_en.html
+            debug_en_mdcontent.txt
+            debug_de.png
+            debug_de.html
+            debug_de_mdcontent.txt
+
+      - name: Commit updated PDFs
+        if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add resume_en.pdf resume_de.pdf
           git diff --cached --quiet || git commit -m "Auto-update resume PDFs"
           git push
-
