@@ -254,23 +254,39 @@
       const params = new URLSearchParams(window.location.search);
       const langParam = (params.get('lang') || '').toLowerCase();
 
-      // English default. German if /de/ OR ?lang=de
-      const isDE = window.location.pathname.includes('/de/') || langParam === 'de';
+      // Deterministic: prefer ?lang=de|en, else fallback to /de/ path, else EN
+      const lang =
+        (langParam === 'de' || langParam === 'en')
+          ? langParam
+          : (window.location.pathname.includes('/de/') ? 'de' : 'en');
+
+      const isDE = lang === 'de';
+
+      // Compute base path so it works on /cv/ or any repo name
+      const parts = window.location.pathname.split('/').filter(Boolean);
+      const repo = parts[0] || '';
+      const base = repo ? `/${repo}/` : `/`;
+
+      const mdUrl  = `${base}content/${isDE ? 'de' : 'en'}.md`;
+      const pdfUrl = `${base}${isDE ? 'resume_de.pdf' : 'resume_en.pdf'}`;
 
       // Update small UI bits
       document.documentElement.lang = isDE ? 'de' : 'en';
-      const tagline = document.getElementById('tagline');
-      if (tagline) tagline.textContent = 'Product Owner'; // keep consistent in both
-      const downloadBtn = document.getElementById('downloadBtn');
-      if (downloadBtn) downloadBtn.textContent = isDE ? 'PDF herunterladen' : 'Download PDF';
 
-      const mdUrl = isDE ? 'content/de.md' : 'content/en.md';
-      const pdfUrl = isDE ? 'resume_de.pdf' : 'resume_en.pdf';
+      const tagline = document.getElementById('tagline');
+      if (tagline) tagline.textContent = 'Product Owner';
+
+      const downloadBtn = document.getElementById('downloadBtn');
+      if (downloadBtn) {
+        downloadBtn.textContent = isDE ? 'PDF herunterladen' : 'Download PDF';
+        downloadBtn.href = pdfUrl;
+      }
 
       const container = document.getElementById('md-content');
 
       try {
         const res = await fetch(mdUrl, { cache: "no-store" });
+        if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${mdUrl}`);
         const mdText = await res.text();
 
         if (window.md && typeof md.html === 'function') {
@@ -279,11 +295,9 @@
           container.textContent = "Markdown renderer failed to load.";
         }
 
-        if (downloadBtn) downloadBtn.href = pdfUrl;
-
         document.body.style.display = 'flex';
       } catch (e) {
-        container.textContent = `Failed to load ${mdUrl}: ${e}`;
+        container.textContent = `Failed to load CV content: ${e.message}`;
         document.body.style.display = 'flex';
       }
     });
