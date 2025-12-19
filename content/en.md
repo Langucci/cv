@@ -10,8 +10,7 @@ SQL & Python, anomaly detection, regulatory & compliance support
 
 ## Experience
 
-### Nexxiot AG, Product Owner
-Zurich, Switzerland | Jul 2020 – Present
+### Nexxiot AG, Product Owner | Zurich, Switzerland | Jul 2020 – Present
 
 - Own end-to-end delivery of the sensor data stack from device ingestion to customer-facing applications and production rollout.
 - Coordinate delivery across multiple initiatives in parallel, managing priorities and cross-team dependencies with a 12–18 month planning horizon.
@@ -19,20 +18,18 @@ Zurich, Switzerland | Jul 2020 – Present
 - Design and operate fleet-health and KPI dashboards to detect data anomalies, track rollouts, and ensure performance targets for large-scale customer projects.
 - Deliver a production-grade ML-based classification capability that prevented a CHF 1M hardware write-off.
 
-### Nexxiot AG, Solution Manager
-Zurich, Switzerland | Oct 2019 – Jul 2020
+### Nexxiot AG, Solution Manager | Zurich, Switzerland | Oct 2019 – Jul 2020
 
 - Coordination of development and launch of a regulated, customer-facing product.  
 - Interface between customers, engineering, and operations during early rollout.
 
-### Nexxiot AG, Project Manager
-Zurich, Switzerland | Feb 2019 – Sep 2019
+### Nexxiot AG, Project Manager | Zurich, Switzerland | Feb 2019 – Sep 2019
 
 - Establishment of foundational quality and information security processes.  
 - Coordination of international logistics and compliant deliveries.
 
 ## Education
-BA, Art History, University of Zurich
+BA, Art History, University of Zurich  
 Matura (Science & Mathematics), Kantonsschule Schaffhausen  
 
 ## Languages & Availability
