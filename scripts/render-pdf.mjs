@@ -1,19 +1,40 @@
 import { chromium } from "playwright";
 import fs from "fs";
+import path from "path";
 
+const fileUrl = (p) => "file://" + p.replace(/\\/g, "/");
+
+// Repo root = current working directory in GitHub Actions
+const ROOT = process.cwd();
+const INDEX = path.join(ROOT, "index.html");
+
+// Output filenames (keep these consistent with your download button logic)
 const targets = [
-  { url: "https://langucci.github.io/cv/", out: "resume_en.pdf" },
-  { url: "https://langucci.github.io/cv/?lang=de", out: "resume_de.pdf" }
+  { url: fileUrl(INDEX), out: path.join(ROOT, "resume_en.pdf"), waitFor: "Profile" },
+  { url: fileUrl(INDEX) + "?lang=de", out: path.join(ROOT, "resume_de.pdf"), waitFor: "Profil" }
 ];
 
 const main = async () => {
+  if (!fs.existsSync(INDEX)) {
+    throw new Error(`index.html not found at ${INDEX}`);
+  }
+
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
   for (const t of targets) {
-    await page.goto(t.url, { waitUntil: "networkidle" });
-    await page.waitForSelector("#md-content h2");  // ensures markdown loaded
+    await page.goto(t.url, { waitUntil: "domcontentloaded" });
+
+    // Wait until markdown has been rendered into the DOM
+    await page.waitForFunction((needle) => {
+      const el = document.querySelector("#md-content");
+      return el && el.textContent && el.textContent.includes(needle);
+    }, t.waitFor, { timeout: 15000 });
+
+    // Apply print styles
     await page.emulateMedia({ media: "print" });
+
+    // Give fonts/images a moment (esp. profile picture)
     await page.waitForTimeout(500);
 
     const pdf = await page.pdf({
@@ -23,6 +44,7 @@ const main = async () => {
     });
 
     fs.writeFileSync(t.out, pdf);
+    console.log(`Wrote ${t.out}`);
   }
 
   await browser.close();
