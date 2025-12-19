@@ -17,7 +17,7 @@ Zurich, Switzerland | Jul 2020 – Present
 
 - Own end-to-end product delivery across the full sensor data stack, spanning device ingestion, backend services, APIs, dashboards, mobile applications, and production rollout.
 - Coordinate delivery across multiple initiatives in parallel, managing priorities and dependencies across teams with a 12–18 month planning horizon.
-Lead a long-running, security-critical sensor product from initial requirements through product maturity, acting as primary interface to enterprise customer and external suppliers, and leading delivery for a CHF 4M enterprise contract.
+- Lead a long-running, security-critical sensor product from initial requirements through product maturity, acting as primary interface to enterprise customer and external suppliers, and leading delivery for a CHF 4M enterprise contract.
 - Design and operate fleet-health monitoring and KPI dashboards to detect data anomalies and errors, track firmware and feature rollouts, and ensure adherence to performance KPIs for large-scale customer projects.
 - Deliver a production-grade ML-based classification capability, preventing a CHF 1M hardware write-off.
 
