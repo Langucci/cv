@@ -20,7 +20,6 @@ const MIME = {
 };
 
 function safePath(urlPath) {
-  // Strip query/hash, normalize, prevent path traversal
   const clean = urlPath.split("?")[0].split("#")[0];
   const resolved = path.normalize(path.join(ROOT, clean));
   if (!resolved.startsWith(ROOT)) return null;
@@ -31,6 +30,7 @@ function startServer(port = 4173) {
   const server = http.createServer((req, res) => {
     const reqUrl = req.url || "/";
     const filePath = safePath(reqUrl === "/" ? "/index.html" : reqUrl);
+
     if (!filePath) {
       res.writeHead(403);
       return res.end("Forbidden");
@@ -52,41 +52,68 @@ function startServer(port = 4173) {
   });
 }
 
+async function renderOne(browser, url, outPath, expectNeedle) {
+  const page = await browser.newPage();
+  try {
+    console.log(`Rendering: ${url}`);
+    await page.goto(url, { waitUntil: "networkidle" });
+
+    // Wait until markdown has been injected (more robust than waiting for h2)
+    await page.waitForFunction(() => {
+      const el = document.querySelector("#md-content");
+      return el && el.textContent && el.textContent.trim().length > 200;
+    }, { timeout: 30000 });
+
+    // Confirm the language-specific keyword appears somewhere
+    await page.waitForFunction((needle) => {
+      const el = document.querySelector("#md-content");
+      return el && el.textContent && el.textContent.includes(needle);
+    }, expectNeedle, { timeout: 30000 });
+
+    await page.emulateMedia({ media: "print" });
+    await page.waitForTimeout(300);
+
+    await page.pdf({
+      path: outPath,
+      format: "A4",
+      printBackground: true,
+      margin: { top: "10mm", right: "10mm", bottom: "10mm", left: "10mm" },
+    });
+
+    console.log(`Wrote ${outPath}`);
+  } catch (e) {
+    // Debug helpers
+    const stamp = expectNeedle === "Profil" ? "de" : "en";
+    await page.screenshot({ path: path.join(ROOT, `debug_${stamp}.png`), fullPage: true }).catch(() => {});
+    const html = await page.content().catch(() => "");
+    fs.writeFileSync(path.join(ROOT, `debug_${stamp}.html`), html);
+    console.error(`Failed rendering ${url}:`, e);
+    throw e;
+  } finally {
+    await page.close();
+  }
+}
+
 async function main() {
   const server = await startServer(4173);
   const base = "http://127.0.0.1:4173";
 
-  const targets = [
-    { url: `${base}/`, out: path.join(ROOT, "resume_en.pdf"), expect: "Profile" },
-    { url: `${base}/?lang=de`, out: path.join(ROOT, "resume_de.pdf"), expect: "Profil" },
-  ];
-
   const browser = await chromium.launch();
-  const page = await browser.newPage();
 
   try {
-    for (const t of targets) {
-      await page.goto(t.url, { waitUntil: "networkidle" });
+    await renderOne(
+      browser,
+      `${base}/`,
+      path.join(ROOT, "resume_en.pdf"),
+      "Profile"
+    );
 
-      // Wait until markdown has rendered (h2 exists + expected keyword appears)
-      await page.waitForSelector("#md-content h2", { timeout: 15000 });
-      await page.waitForFunction((needle) => {
-        const el = document.querySelector("#md-content");
-        return el && el.textContent && el.textContent.includes(needle);
-      }, t.expect, { timeout: 15000 });
-
-      await page.emulateMedia({ media: "print" });
-      await page.waitForTimeout(300);
-
-      await page.pdf({
-        path: t.out,
-        format: "A4",
-        printBackground: true,
-        margin: { top: "10mm", right: "10mm", bottom: "10mm", left: "10mm" },
-      });
-
-      console.log(`Wrote ${t.out}`);
-    }
+    await renderOne(
+      browser,
+      `${base}/?lang=de`,
+      path.join(ROOT, "resume_de.pdf"),
+      "Profil"
+    );
   } finally {
     await browser.close();
     server.close();
