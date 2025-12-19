@@ -1,7 +1,7 @@
 ## Profile
 Product Owner with 6+ years delivering complex hardware-enabled, data-driven products in regulated, enterprise environments.
 Own end-to-end delivery across product portfolios spanning hardware, software, data platforms, and production operations.
-Accountable for CHF 1.6M ARR, prevented a CHF 1M hardware write-off, and led delivery for a CHF 4M enterprise contract.
+Accountable for CHF 1.6M in revenue (last financial year), prevented a CHF 1M hardware write-off, and led delivery of a CHF 4M enterprise contract.
 
 ## Skills
 Product ownership & delivery, roadmaps, prioritisation, cross-functional collaboration  
