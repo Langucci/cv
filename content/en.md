@@ -25,7 +25,7 @@ Zurich, Switzerland | Oct 2019 – Jul 2020
 - Coordination of development and launch of a regulated, customer-facing product.  
 Interface between customers, engineering, and operations during early rollout.
 
-- ### Nexxiot AG, Project Manager
+### Nexxiot AG, Project Manager
 Zurich, Switzerland | Feb 2019 – Sep 2019
 
 - Establishment of foundational quality and information security processes.  
