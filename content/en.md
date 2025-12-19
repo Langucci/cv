@@ -14,7 +14,7 @@ SQL & Python, anomaly detection, regulatory & compliance support
 
 - Own end-to-end delivery of the sensor data stack from device ingestion to customer-facing applications and production rollout.
 - Coordinate delivery across multiple initiatives in parallel, managing priorities and cross-team dependencies with a 12–18 month planning horizon.
-- Lead a long-running, security-critical sensor product through product maturity as primary interface to enterprise customer and suppliers, delivering a CHF 4M contract.
+- Lead a long-running, security-critical sensor product from requirements gathering to product maturity as primary interface to enterprise customer and suppliers, delivering a CHF 4M contract.
 - Design and operate fleet-health and KPI dashboards to detect data anomalies, track rollouts, and ensure performance targets for large-scale customer projects.
 - Deliver a production-grade ML-based classification capability that prevented a CHF 1M hardware write-off.
 
