@@ -46,4 +46,4 @@ Matura, Science & Mathematics, Kantonsschule Schaffhausen
 
 ## Languages & Availability
 German (native), English (fluent), French (advanced)  
-3 months notice period
+Notice period: 3 months
