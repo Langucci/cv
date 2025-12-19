@@ -38,7 +38,6 @@
       flex-direction: column;
     }
 
-    /* ===== HEADER ===== */
     .header {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
@@ -92,7 +91,6 @@
 
     .contact a:hover { border-bottom-color: #fff; }
 
-    /* ===== MAIN CARD ===== */
     #card {
       background: var(--card);
       border-radius: 14px;
@@ -114,13 +112,11 @@
     li { margin: 6px 0; }
     p { margin: 10px 0; color: var(--ink); }
 
-    /* ===== SPACING FIX (SCREEN) ===== */
-    /* Tighten gap between job title, meta line, and responsibilities */
+    /* Tighten gap between job title, meta line, and first paragraph */
     #md-content h3 { margin-bottom: 4px; }
     #md-content h3 + p { margin-top: 4px; }
     #md-content h3 + p + p { margin-top: 2px; }
 
-    /* ===== ACTIONS ===== */
     .actions {
       display: flex;
       justify-content: center;
@@ -174,33 +170,30 @@
       .tagline { white-space: nowrap; font-size: 0.95rem; }
 
       .profile-pic {
-        width: 110px;
-        height: 110px;
-        border-width: 2px;
+        width: 110px; height: 110px; border-width: 2px;
         box-shadow: none !important;
       }
 
       #card { padding: 0 !important; box-shadow: none !important; border: 0 !important; }
 
-      h2 { font-size: 1.05rem; margin: 10px 0 6px; padding-bottom: 4px; }
-
-      h3 { margin: 6px 0 2px !important; }
-      p { margin: 4px 0; }
+      h2 { font-size: 1.05rem; margin: 10px 0 6px; padding-bottom: 4px; border-bottom: 1px solid #e5e7eb; }
+      h3, h4 { margin-top: 8px; }
+      p { margin: 5px 0; }
       ul { margin: 4px 0 4px 18px; }
       li { margin: 3px 0; }
 
-      /* ===== SPACING FIX (PRINT) ===== */
+      /* Tighten gap in print too */
+      #md-content h3 { margin-bottom: 2px !important; }
       #md-content h3 + p { margin-top: 2px !important; }
       #md-content h3 + p + p { margin-top: 2px !important; }
 
       h1, h2, h3, h4, p, ul, li, .header, .contact {
-        page-break-inside: avoid;
-        orphans: 3;
-        widows: 3;
+        page-break-inside: avoid; orphans: 3; widows: 3;
       }
 
       a[href]:after { content: "" !important; }
       .contact a { color: #fff !important; text-decoration: underline; border: 0; }
+
       .actions { display: none !important; }
     }
 
@@ -223,13 +216,12 @@
     }
   </style>
 </head>
-
 <body>
   <!-- HEADER -->
-  <header class="header">
+  <header class="header" role="banner" aria-label="Resume header">
     <div class="header-left">
       <h1 class="name">Lionel Landucci</h1>
-      <p class="tagline">Product Owner</p>
+      <p class="tagline" id="tagline">Product Owner</p>
     </div>
 
     <div class="header-center">
@@ -237,7 +229,7 @@
     </div>
 
     <div class="header-right">
-      <div class="contact">
+      <div class="contact" aria-label="Contact">
         <a href="mailto:landuccilionel@gmail.com">landuccilionel@gmail.com</a><br />
         +41 79 687 56 20<br />
         Zurich, Switzerland<br />
@@ -247,71 +239,53 @@
     </div>
   </header>
 
-  <!-- MAIN -->
+  <!-- MAIN CARD -->
   <div id="card">
     <div id="md-content"></div>
 
     <div class="actions">
-      <a class="btn" href="resume.pdf" download>Download PDF</a>
+      <a class="btn" href="#" download id="downloadBtn">Download PDF</a>
     </div>
   </div>
 
-  <!-- RENDER MARKDOWN -->
+  <!-- JS: Render Markdown -->
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const mdText = `
-## Profile
-Product Owner with 6+ years delivering complex, data-driven products in regulated, enterprise environments.
-Responsible for delivery across the full sensor product portfolio, covering data, software, and operational readiness.
-Accountable for CHF 1.6M ARR, delivered CHF 1M cost savings and supported CHF 4M in new contracts.
+    window.addEventListener('DOMContentLoaded', async () => {
+      const params = new URLSearchParams(window.location.search);
+      const langParam = (params.get('lang') || '').toLowerCase();
 
-## Skills
-Product ownership & delivery, roadmaps, prioritisation  
-Cross-functional coordination across engineering, data, and operations  
-Data platforms & APIs, release and operational readiness  
-SQL & Python, KPI dashboards, anomaly detection  
-Regulatory & compliance support for enterprise products
+      // English default. German if /de/ OR ?lang=de
+      const isDE = window.location.pathname.includes('/de/') || langParam === 'de';
 
-## Experience
+      // Update small UI bits
+      document.documentElement.lang = isDE ? 'de' : 'en';
+      const tagline = document.getElementById('tagline');
+      if (tagline) tagline.textContent = 'Product Owner'; // keep consistent in both
+      const downloadBtn = document.getElementById('downloadBtn');
+      if (downloadBtn) downloadBtn.textContent = isDE ? 'PDF herunterladen' : 'Download PDF';
 
-### Nexxiot AG, Product Owner (Sensor Portfolio)
-Zurich, Switzerland | Jan 2024 – Present
+      const mdUrl = isDE ? 'content/de.md' : 'content/en.md';
+      const pdfUrl = isDE ? 'resume_de.pdf' : 'resume_en.pdf';
 
-Portfolio-level ownership of sensor products with a 12–18 month execution horizon.  
-ML-based event classification delivered to production, reducing false positives by 90% and saving CHF 1M annually.  
-Improved system reliability and fleet performance through monitoring and KPI-driven analysis.
+      const container = document.getElementById('md-content');
 
-### Nexxiot AG, Product Owner (Sensor Data Pipeline & Applications)
-Zurich, Switzerland | Jul 2020 – Dec 2023
+      try {
+        const res = await fetch(mdUrl, { cache: "no-store" });
+        const mdText = await res.text();
 
-End-to-end ownership of the sensor data pipeline from device ingestion to customer-facing applications.  
-Backlog ownership and delivery alignment for an interdisciplinary agile team.  
-Operational and customer KPIs introduced to improve transparency and response.  
-Delivery of a security-critical solution from requirements to production, supporting a multi-million-CHF enterprise contract.
+        if (window.md && typeof md.html === 'function') {
+          container.innerHTML = md.html(mdText);
+        } else {
+          container.textContent = "Markdown renderer failed to load.";
+        }
 
-### Nexxiot AG, Solution Manager
-Zurich, Switzerland | Oct 2019 – Jul 2020
+        if (downloadBtn) downloadBtn.href = pdfUrl;
 
-Coordination of development and launch of a regulated, customer-facing product.  
-Interface between customers, engineering, and operations during early rollout.
-
-### Nexxiot AG, Project Manager
-Zurich, Switzerland | Feb 2019 – Sep 2019
-
-Establishment of foundational quality and information security processes.  
-Coordination of international logistics and compliant deliveries.
-
-## Education
-BA, Art History, University of Zurich  
-Swiss Armed Forces, Tank Driver (Compulsory service)  
-Matura, Science & Mathematics, Kantonsschule Schaffhausen
-
-## Languages & Availability
-German (native), English (fluent), French (advanced)  
-3 months notice period
-`;
-      document.getElementById('md-content').innerHTML = md.html(mdText);
-      document.body.style.display = 'flex';
+        document.body.style.display = 'flex';
+      } catch (e) {
+        container.textContent = `Failed to load ${mdUrl}: ${e}`;
+        document.body.style.display = 'flex';
+      }
     });
   </script>
 </body>
