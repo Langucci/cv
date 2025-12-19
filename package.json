@@ -1,0 +1,11 @@
+{
+  "name": "cv-pdf",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  },
+  "scripts": {
+    "pdf": "node scripts/render-pdf.mjs"
+  }
+}
