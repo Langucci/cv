@@ -15,7 +15,6 @@
       --brand-1: #0A74DA;
       --brand-2: #00BFA6;
       --ink: #1f2937;
-      --muted: #6b7280;
       --bg: #fff;
       --card: #ffffff;
     }
@@ -33,7 +32,7 @@
       padding: 20px 18px 24px;
       line-height: 1.7;
       min-height: 100vh;
-      display: none; /* JS will set to flex when content loaded */
+      display: none; /* enabled via JS */
       flex-direction: column;
     }
 
@@ -55,7 +54,7 @@
     .header-right { justify-self: end; text-align: right; }
 
     .name {
-      font-size: 2.0rem;
+      font-size: 2rem;
       font-weight: 700;
       margin: 0 0 6px 0;
       line-height: 1.1;
@@ -63,9 +62,9 @@
 
     .tagline {
       margin: 0;
-      color: rgba(255, 255, 255, 0.9);
       font-size: 1rem;
       line-height: 1.25;
+      opacity: 0.95;
     }
 
     .profile-pic {
@@ -73,30 +72,25 @@
       height: 150px;
       object-fit: cover;
       border-radius: 50%;
-      object-position: center 20%;
-      transform: scale(0.95);
-      border: 3px solid rgba(255, 255, 255, 0.85);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+      border: 3px solid rgba(255,255,255,0.85);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
     }
 
     .contact {
       font-size: 0.98rem;
       line-height: 1.55;
-      text-align: right;
     }
 
     .contact a {
       color: #fff;
       text-decoration: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+      border-bottom: 1px solid rgba(255,255,255,0.35);
     }
-    .contact a:hover { border-bottom-color: #fff; }
 
     #card {
       background: var(--card);
       border-radius: 14px;
       padding: 22px;
-      box-shadow: none;
       flex-grow: 1;
     }
 
@@ -109,46 +103,19 @@
       margin-bottom: 10px;
     }
 
-    h3, h4 { margin-top: 16px; margin-bottom: 8px; }
+    h3 { margin-top: 16px; margin-bottom: 8px; }
     ul { margin: 10px 0 10px 22px; }
     li { margin: 6px 0; }
-    p { margin: 10px 0; color: var(--ink); }
+    p  { margin: 10px 0; }
 
-    /* Tighten gap between job title/meta and first paragraph (kept) */
-    #md-content h3 { margin-bottom: 4px; }
-    #md-content h3 + p { margin-top: 4px; }
-    #md-content h3 + p + p { margin-top: 2px; }
-
-    .actions {
-      display: flex;
-      justify-content: center;
-      margin-top: 28px;
-    }
-
-    .btn {
-      background: var(--brand-1);
-      color: #fff;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 12px 22px;
-      border-radius: 8px;
-      box-shadow: 0 6px 14px rgba(10, 116, 218, 0.18);
-      transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
-    }
-    .btn:hover {
-      transform: translateY(-1px);
-      background: #0b6bca;
-      box-shadow: 0 10px 18px rgba(10, 116, 218, 0.24);
-    }
-
-    /* ===== PRINT (fixed page breaks for Chrome) ===== */
+    /* ===== PRINT (FIXED) ===== */
     @media print {
       @page { size: A4; margin: 10mm; }
 
       html, body {
+        background: #fff !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
-        background: #fff !important;
       }
 
       body {
@@ -159,173 +126,104 @@
       }
 
       .header {
-        background: linear-gradient(110deg, var(--brand-1), var(--brand-2)) !important;
-        color: #fff !important;
-        margin-bottom: 7mm;
         padding: 16px;
+        margin-bottom: 7mm;
         border-radius: 10px;
         break-after: avoid;
-        page-break-after: avoid;
       }
 
-      .name { font-size: 1.7rem; margin-bottom: 2px; }
-      .tagline { white-space: nowrap; font-size: 0.95rem; }
+      .name { font-size: 1.7rem; }
+      .tagline { font-size: 0.95rem; white-space: nowrap; }
 
       .profile-pic {
-        width: 105px; height: 105px;
-        border-width: 2px;
-        box-shadow: none !important;
-        transform: none;
+        width: 105px;
+        height: 105px;
+        box-shadow: none;
       }
 
       #card {
         padding: 0 !important;
         box-shadow: none !important;
-        border: 0 !important;
       }
 
-      /* Slightly tighter typography for 2-page A4 */
       h2 {
         font-size: 1.05rem;
         margin: 10px 0 6px;
-        padding-bottom: 4px;
-        border-bottom: 1px solid #e5e7eb;
         break-after: avoid;
-        page-break-after: avoid;
       }
-      h3, h4 {
+
+      h3 {
         margin-top: 8px;
         margin-bottom: 4px;
         break-after: avoid;
-        page-break-after: avoid;
       }
+
       p { margin: 5px 0; }
+
       ul { margin: 4px 0 4px 18px; }
       li { margin: 3px 0; }
 
-      /* Keep headings with the next content */
-      h2, h3, h4 { break-inside: avoid; page-break-inside: avoid; }
+      /* ===== THE IMPORTANT PART ===== */
 
-      /* Allow normal breaks inside paragraphs and list items (THIS FIXES THE BIG BLANK AREAS) */
-      p, li { break-inside: auto; page-break-inside: auto; orphans: 2; widows: 2; }
+      /* Allow lists to split across pages */
+      ul, ol {
+        break-inside: auto;
+        page-break-inside: auto;
+      }
 
-      /* Avoid awkward splits for lists as a whole (but don't forbid all breaks everywhere) */
-      ul, ol { break-inside: avoid; page-break-inside: avoid; }
+      /* Keep bullet items intact */
+      li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        orphans: 2;
+        widows: 2;
+      }
 
-      /* Optional: keep each job section together a bit better */
-      #md-content h3 { margin-bottom: 2px !important; }
-      #md-content h3 + p { margin-top: 2px !important; }
-      #md-content h3 + p + p { margin-top: 2px !important; }
-
-      a[href]:after { content: "" !important; }
-      .contact a { color: #fff !important; text-decoration: underline; border: 0; }
+      /* Paragraphs can break normally */
+      p {
+        break-inside: auto;
+        page-break-inside: auto;
+        orphans: 2;
+        widows: 2;
+      }
 
       .actions { display: none !important; }
-    }
-
-    @media (max-width: 640px) {
-      .header {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        text-align: left;
-      }
-
-      .header-left,
-      .header-center,
-      .header-right {
-        justify-self: start;
-        text-align: left;
-      }
-
-      .profile-pic { width: 140px; height: 140px; }
-      .contact { text-align: left; }
     }
   </style>
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header class="header" role="banner" aria-label="Resume header">
+  <header class="header">
     <div class="header-left">
       <h1 class="name">Lionel Landucci</h1>
-      <p class="tagline" id="tagline">Product Owner</p>
+      <p class="tagline">Product Owner</p>
     </div>
 
     <div class="header-center">
-      <img src="LanducciLionel_Headshot.jpg" alt="Profile picture of Lionel Landucci" class="profile-pic" />
+      <img src="LanducciLionel_Headshot.jpg" alt="Profile picture" class="profile-pic" />
     </div>
 
-    <div class="header-right">
-      <div class="contact" aria-label="Contact">
-        <a href="mailto:landuccilionel@gmail.com">landuccilionel@gmail.com</a><br />
-        +41 79 687 56 20<br />
-        Zurich, Switzerland<br />
-        Nationality: Swiss<br />
-        <a href="https://www.linkedin.com/in/lionel-landucci/">linkedin.com/in/lionel-landucci</a>
-      </div>
+    <div class="header-right contact">
+      <a href="mailto:landuccilionel@gmail.com">landuccilionel@gmail.com</a><br>
+      +41 79 687 56 20<br>
+      Zurich, Switzerland<br>
+      Swiss<br>
+      <a href="https://www.linkedin.com/in/lionel-landucci/">linkedin.com/in/lionel-landucci</a>
     </div>
   </header>
 
-  <!-- MAIN CARD -->
   <div id="card">
     <div id="md-content"></div>
-
-    <div class="actions">
-      <a class="btn" href="#" download id="downloadBtn">Download PDF</a>
-    </div>
   </div>
 
-  <!-- JS: Render Markdown -->
   <script>
-    window.addEventListener('DOMContentLoaded', async () => {
-      const params = new URLSearchParams(window.location.search);
-      const langParam = (params.get('lang') || '').toLowerCase();
-
-      // Deterministic: prefer ?lang=de|en, else fallback to /de/ path, else EN
-      const lang =
-        (langParam === 'de' || langParam === 'en')
-          ? langParam
-          : (window.location.pathname.includes('/de/') ? 'de' : 'en');
-
-      const isDE = lang === 'de';
-
-      // Base path so it works on /cv/ or any repo name
-      const parts = window.location.pathname.split('/').filter(Boolean);
-      const repo = parts[0] || '';
-      const base = repo ? `/${repo}/` : `/`;
-
-      const mdUrl  = `${base}content/${isDE ? 'de' : 'en'}.md`;
-      const pdfUrl = `${base}${isDE ? 'resume_de.pdf' : 'resume_en.pdf'}`;
-
-      document.documentElement.lang = isDE ? 'de' : 'en';
-
-      const tagline = document.getElementById('tagline');
-      if (tagline) tagline.textContent = 'Product Owner';
-
-      const downloadBtn = document.getElementById('downloadBtn');
-      if (downloadBtn) {
-        downloadBtn.textContent = isDE ? 'PDF herunterladen' : 'Download PDF';
-        downloadBtn.href = pdfUrl;
-      }
-
-      const container = document.getElementById('md-content');
-
-      try {
-        const res = await fetch(mdUrl, { cache: "no-store" });
-        if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${mdUrl}`);
-        const mdText = await res.text();
-
-        if (window.md && typeof md.html === 'function') {
-          container.innerHTML = md.html(mdText);
-        } else {
-          container.textContent = "Markdown renderer failed to load.";
-        }
-
-        document.body.style.display = 'flex';
-      } catch (e) {
-        container.textContent = `Failed to load CV content: ${e.message}`;
-        document.body.style.display = 'flex';
-      }
+    window.addEventListener("DOMContentLoaded", async () => {
+      const mdUrl = "content/en.md";
+      const container = document.getElementById("md-content");
+      const res = await fetch(mdUrl);
+      const mdText = await res.text();
+      container.innerHTML = md.html(mdText);
+      document.body.style.display = "flex";
     });
   </script>
 </body>
