@@ -20,13 +20,9 @@ const MIME = {
 };
 
 function resolveFileFromPathname(pathname) {
-  // Map "/" -> "/index.html"
   let p = pathname === "/" ? "/index.html" : pathname;
-
-  // Map "/de/" -> "/de/index.html"
   if (p.endsWith("/")) p += "index.html";
 
-  // Prevent traversal
   const resolved = path.normalize(path.join(ROOT, p));
   if (!resolved.startsWith(ROOT)) return null;
 
@@ -68,7 +64,6 @@ function startServer(port = 4173) {
 async function renderOne(browser, url, outPath, expectNeedle, label) {
   const page = await browser.newPage();
 
-  // Helpful logs in Actions
   page.on("console", (msg) => console.log(`[${label}] console:`, msg.type(), msg.text()));
   page.on("requestfailed", (req) =>
     console.log(`[${label}] requestfailed:`, req.url(), req.failure()?.errorText)
@@ -80,28 +75,44 @@ async function renderOne(browser, url, outPath, expectNeedle, label) {
 
   try {
     console.log(`Rendering: ${url}`);
-    await page.goto(url, { waitUntil: "networkidle" });
 
-    // Wait until markdown content is rendered
+    // More deterministic than networkidle for pages that load CDN assets/fonts
+    await page.goto(url, { waitUntil: "domcontentloaded" });
+
+    // Wait until markdown is rendered into HTML (and contains a known needle)
     await page.waitForFunction((needle) => {
       const el = document.querySelector("#md-content");
       const t = (el?.textContent || "").trim();
       return t.length > 200 && t.includes(needle);
     }, expectNeedle, { timeout: 45000 });
 
+    // Ensure fonts/layout are settled
+    await page.waitForTimeout(250);
+
+    // Print mode
     await page.emulateMedia({ media: "print" });
-    await page.waitForTimeout(300);
+
+    // Small extra settle time after switching media
+    await page.waitForTimeout(250);
 
     await page.pdf({
       path: outPath,
       format: "A4",
       printBackground: true,
+      displayHeaderFooter: false,
+
+      // Let @page size/margins be respected if you set them in CSS
+      preferCSSPageSize: true,
+
+      // Keep margins explicit (matches your CSS @page)
       margin: { top: "10mm", right: "10mm", bottom: "10mm", left: "10mm" },
+
+      // Gentle nudge to avoid spilling to a 3rd page (usually invisible)
+      scale: 0.98,
     });
 
     console.log(`Wrote ${outPath}`);
   } catch (e) {
-    // Debug dumps
     await page.screenshot({ path: path.join(ROOT, `debug_${label}.png`), fullPage: true }).catch(() => {});
     const html = await page.content().catch(() => "");
     fs.writeFileSync(path.join(ROOT, `debug_${label}.html`), html);
