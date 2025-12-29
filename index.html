@@ -32,23 +32,22 @@
       max-width: 940px;
       padding: 20px 18px 24px;
       line-height: 1.7;
-      display: none;
       min-height: 100vh;
-      display: flex;
+      display: none; /* JS will set to flex when content loaded */
       flex-direction: column;
     }
 
-    /* ===== HEADER (restored to original look) ===== */
+    /* ===== HEADER ===== */
     .header {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       gap: 22px;
       background: linear-gradient(110deg, var(--brand-1), var(--brand-2));
-      padding: 24px;                 /* slightly reduced from 28px */
+      padding: 24px;
       border-radius: 14px;
       color: #fff;
-      margin-bottom: 18px;           /* slightly reduced from 20px */
+      margin-bottom: 18px;
     }
 
     .header-left { justify-self: start; }
@@ -56,7 +55,7 @@
     .header-right { justify-self: end; text-align: right; }
 
     .name {
-      font-size: 2.0rem;             /* slightly smaller than your original 2.15rem */
+      font-size: 2.0rem;
       font-weight: 700;
       margin: 0 0 6px 0;
       line-height: 1.1;
@@ -70,7 +69,7 @@
     }
 
     .profile-pic {
-      width: 150px;                  /* slightly smaller than 170 */
+      width: 150px;
       height: 150px;
       object-fit: cover;
       border-radius: 50%;
@@ -142,7 +141,7 @@
       box-shadow: 0 10px 18px rgba(10, 116, 218, 0.24);
     }
 
-    /* ===== PRINT (relaxed so the page fills nicely) ===== */
+    /* ===== PRINT (fixed page breaks for Chrome) ===== */
     @media print {
       @page { size: A4; margin: 10mm; }
 
@@ -153,8 +152,8 @@
       }
 
       body {
-        font-size: 10.5pt;         /* bigger than before */
-        line-height: 1.5;        /* more airy than the compressed version */
+        font-size: 10.5pt;
+        line-height: 1.45;
         padding: 0 !important;
         max-width: 100% !important;
       }
@@ -162,38 +161,61 @@
       .header {
         background: linear-gradient(110deg, var(--brand-1), var(--brand-2)) !important;
         color: #fff !important;
-        margin-bottom: 8mm;
-        padding: 18px;           /* original print feel */
+        margin-bottom: 7mm;
+        padding: 16px;
         border-radius: 10px;
+        break-after: avoid;
         page-break-after: avoid;
       }
 
-      .name { font-size: 1.75rem; margin-bottom: 2px; }
+      .name { font-size: 1.7rem; margin-bottom: 2px; }
       .tagline { white-space: nowrap; font-size: 0.95rem; }
 
       .profile-pic {
-        width: 110px; height: 110px;
+        width: 105px; height: 105px;
         border-width: 2px;
         box-shadow: none !important;
         transform: none;
       }
 
-      #card { padding: 0 !important; box-shadow: none !important; border: 0 !important; }
+      #card {
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: 0 !important;
+      }
 
-      h2 { font-size: 1.06rem; margin: 10px 0 6px; padding-bottom: 4px; border-bottom: 1px solid #e5e7eb; }
-      h3, h4 { margin-top: 8px; margin-bottom: 4px; }
+      /* Slightly tighter typography for 2-page A4 */
+      h2 {
+        font-size: 1.05rem;
+        margin: 10px 0 6px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #e5e7eb;
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+      h3, h4 {
+        margin-top: 8px;
+        margin-bottom: 4px;
+        break-after: avoid;
+        page-break-after: avoid;
+      }
       p { margin: 5px 0; }
       ul { margin: 4px 0 4px 18px; }
       li { margin: 3px 0; }
 
-      /* Tighten gap in print too (kept) */
+      /* Keep headings with the next content */
+      h2, h3, h4 { break-inside: avoid; page-break-inside: avoid; }
+
+      /* Allow normal breaks inside paragraphs and list items (THIS FIXES THE BIG BLANK AREAS) */
+      p, li { break-inside: auto; page-break-inside: auto; orphans: 2; widows: 2; }
+
+      /* Avoid awkward splits for lists as a whole (but don't forbid all breaks everywhere) */
+      ul, ol { break-inside: avoid; page-break-inside: avoid; }
+
+      /* Optional: keep each job section together a bit better */
       #md-content h3 { margin-bottom: 2px !important; }
       #md-content h3 + p { margin-top: 2px !important; }
       #md-content h3 + p + p { margin-top: 2px !important; }
-
-      h1, h2, h3, h4, p, ul, li, .header, .contact {
-        page-break-inside: avoid; orphans: 2; widows: 2;
-      }
 
       a[href]:after { content: "" !important; }
       .contact a { color: #fff !important; text-decoration: underline; border: 0; }
@@ -220,6 +242,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- HEADER -->
   <header class="header" role="banner" aria-label="Resume header">
