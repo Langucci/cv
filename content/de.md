@@ -27,7 +27,7 @@
 - Verantwortung für einen Jahresumsatz von CHF 1.6 Mio. (2024)
 - Verantwortung für die Umsetzung eines Enterprise-Kundenvertrags über CHF 4 Mio.
 - Aufbau und Nutzung von Produktmetriken und KPIs zur datenbasierten Priorisierung und Produktoptimierung
-- Entwicklung und Einführung einer ML-gestützten Klassifikationslösung zur Detektion von Performanceproblemen welche eine Abschreibung > CHF 1 Mio. verhinderte
+- ML-gestützte Klassifikation roher Sensordaten zur Unterscheidung von Produktions- und Installationsfehlern und Vermeidung einer Abschreibung von über CHF 1 Mio.
 - Etablierung strukturierter Release-, Rollout- und Betriebsprozesse
 
 ### Nexxiot AG, Solution Manager | Zürich | Okt 2019 – Jul 2020
