@@ -1,34 +1,56 @@
 ## Profil
-Product Owner mit über 6 Jahren Erfahrung in der Umsetzung komplexer, hardwaregestützter Produkte in regulierten Enterprise-Umfeldern.
-Verantwortlich für Produktumsetzung über Hardware und Software hinweg.
-Umsatzverantwortung von CHF 1.6 Mio. (letztes Geschäftsjahr), Vermeidung einer Hardware-Abschreibung von CHF 1 Mio. sowie Leitung eines Enterprise-Vertrags über CHF 4 Mio.
+- Product Owner mit über 6 Jahren Erfahrung in der Entwicklung, Skalierung und Weiterentwicklung komplexer Produkte in regulierten Enterprise-Umfeldern
+- End-to-End-Verantwortung für Product Ownership von Produktvision über Roadmaps und Priorisierung bis Betrieb und kontinuierliche Optimierung
+- Ergebnisverantwortung mit CHF 1.6 Mio. Jahresumsatz sowie Sicherung und Umsetzung von Enterprise-Verträgen im mehrmillionigen CHF-Bereich
+- Vermeidung einer Abschreibung von über CHF 1 Mio. durch daten- und ML-gestützte Produktentscheidungen
+- Starke Erfahrung in bereichsübergreifender Zusammenarbeit und Übersetzung von Business-Anforderungen in umsetzbare Produktlösungen
 
 ## Kompetenzen
-Produktverantwortung, Roadmaps, Priorisierung, bereichsübergreifende Zusammenarbeit  
-Datenplattformen und APIs, Systemüberwachung, KPI-Dashboards  
-SQL und Python, Anomalieerkennung, regulatorische Unterstützung
+- Product Ownership, Product Management, Produktvision, Roadmap-Planung, Backlog-Management, Priorisierung
+- Stakeholder-Management, Anforderungsmanagement, bereichsübergreifende Zusammenarbeit
+- Portfolio- & Lifecycle-Management komplexer Produkte
+- Plattform- & API-basierte Produktentwicklung, datengetriebene Produkte
+- KPI-Definition, Produktmetriken, Analytics, datenbasierte Entscheidungsfindung
+- SQL, Python, Anomalieerkennung, ML-gestützte Klassifikationsmodelle
+- Jira, Confluence, Analytics- & BI-Tools (z. B. Apache Superset)
+- Produktentwicklung in regulierten Umfeldern
+- Release-, Rollout- & Betriebsmanagement, Monitoring, Incident- & Performance-Management
 
 ## Berufserfahrung
 
 ### Nexxiot AG, Product Owner | Zürich | Jul 2020 – Heute
-- Umsetzung des Sensordaten-Ökosystems von Geräteanbindung bis Betrieb.
-- Koordination paralleler Initiativen mit Priorisierung und Abhängigkeitsmanagement (12–18 Monate).
-- Leitung eines sicherheitskritischen Sensorprodukts von Anforderungen bis Produktreife; Umsetzung eines Enterprise-Vertrags über CHF 4 Mio.
-- Aufbau und Betrieb von Monitoring-Dashboards zur Anomalieerkennung, KPI-Überwachung und Rollout-Nachverfolgung.
-- Umsetzung einer ML-gestützten Klassifikationslösung zur Vermeidung einer Hardware-Abschreibung von CHF 1 Mio.
+- Verantwortung für Produktvision, Produktstrategie, Roadmap und Priorisierung eines Multi-SKU-Produktportfolios
+- End-to-End-Ownership für Product Discovery und Product Delivery
+- Übersetzung von Kundenanforderungen und Business-Zielen in Product Backlogs, User Stories und Releases
+- Enge Zusammenarbeit mit Engineering, Daten, Operations, Kunden und Management
+- Koordination paralleler Produktinitiativen mit einem Planungshorizont von 12 bis 18 Monaten
+- Verantwortung für einen Jahresumsatz von CHF 1.6 Mio. (2024)
+- Verantwortung für die Umsetzung eines Enterprise-Kundenvertrags über CHF 4 Mio.
+- Aufbau und Nutzung von Produktmetriken und KPIs zur datenbasierten Priorisierung und Produktoptimierung
+- Entwicklung und Einführung einer ML-gestützten Klassifikationslösung zur Detektion von Performanceproblemen welche eine Abschreibung > CHF 1 Mio. verhinderte
+- Etablierung strukturierter Release-, Rollout- und Betriebsprozesse
 
 ### Nexxiot AG, Solution Manager | Zürich | Okt 2019 – Jul 2020
-- Koordination der Entwicklung und Einführung eines regulierten Produkts.
-- Schnittstelle zwischen Kunden, Entwicklung und Betrieb.
+- End-to-End-Koordination der Entwicklung und Markteinführung eines komplexen Produkts
+- Schnittstelle zwischen Business, Engineering und Operations
+- Unterstützung bei Produktdefinition, Markteinführung und Weiterentwicklung bestehender Produkte
+- Abstimmung von Kundenanforderungen, technischen Lösungen und operativer Umsetzung
 
-### Nexxiot AG, Project Manager | Zürich | Feb 2019 – Sep 2019
-- Aufbau von Qualitäts- und Informationssicherheitsprozessen.
-- Koordination internationaler Logistik und konformer Lieferungen.
+### Nexxiot AG, Project Manager | Zürich | Jun 2018 – Sep 2019
+- Projektmanagement für komplexe Produkt- und Lieferprojekte
+- Aufbau und Etablierung von Qualitätsmanagement- und Informationssicherheitsprozessen
+- Unterstützung und Vorbereitung von ISO 9001- und ISO 27001-Audits
+- Koordination internationaler Lieferketten und externer Partner
+- Optimierung interner Prozesse in Projekt-, Produkt- und Logistikabläufen
 
 ## Ausbildung
-BA, Kunstgeschichte, Universität Zürich  
-Matura (Naturwissenschaften & Mathematik), Kantonsschule Schaffhausen
+- Bachelor of Arts, Universität Zürich (2015–2018)
+- Matura (Naturwissenschaftlich-Mathematisch), Kantonsschule Schaffhausen (2009–2013)
 
-## Sprachen & Verfügbarkeit
-Deutsch (Muttersprache), Englisch (fliessend), Französisch (fortgeschritten)  
-Kündigungsfrist: 3 Monate
+## Sprachen
+- Deutsch (Muttersprache)
+- Englisch (fliessend)
+- Französisch (fortgeschritten)
+
+## Verfügbarkeit
+- Kündigungsfrist: 3 Monate
