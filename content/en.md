@@ -19,6 +19,7 @@
 ## Professional Experience
 
 ### Nexxiot AG, Product Owner | Zurich | Jul 2020 – Present
+*Nexxiot AG is a technology company providing IoT and data solutions for the global logistics industry.*
 - Responsibility for product vision, product strategy, roadmap and prioritization across a diverse product portfolio
 - End-to-end ownership for product discovery and product delivery
 - Translation of customer requirements and business objectives into product backlogs, user stories and releases
