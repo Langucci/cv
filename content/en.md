@@ -1,37 +1,56 @@
 ## Profile
-Product Owner with 6+ years delivering complex hardware-enabled, data-driven products in regulated, enterprise environments.
-Own end-to-end delivery across product portfolios spanning hardware, software, data platforms, and production operations.
-Accountable for CHF 1.6M in revenue (last financial year), prevented a CHF 1M hardware write-off, and led delivery of a CHF 4M enterprise contract.
+- Product Owner with over 6 years of experience in developing, scaling and evolving complex products in regulated enterprise environments
+- End-to-end responsibility for product ownership from product vision through roadmaps and prioritization to operations and continuous optimization
+- Proven accountability for CHF 1.6 million in annual revenue as well as the delivery of enterprise contracts in the multi-million CHF range
+- Prevention of write-offs exceeding CHF 1 million through data- and machine-learning-driven product decisions
+- Strong experience in cross-functional collaboration and translating business requirements into actionable product solutions
 
 ## Skills
-Product ownership & delivery, roadmaps, prioritisation, cross-functional collaboration  
-Data platforms & APIs, production rollouts, system monitoring, KPI dashboards  
-SQL & Python, anomaly detection, regulatory & compliance support
+- Product Ownership, Product Management, product vision, roadmap planning, backlog management, prioritization
+- Stakeholder management, requirements management, cross-functional collaboration
+- Portfolio and lifecycle management of complex products
+- Platform- and API-based product development, data-driven products
+- KPI definition, product metrics, analytics, data-driven decision making
+- SQL, Python, anomaly detection, machine-learning-based classification models
+- Jira, Confluence, analytics and BI tools (e.g. Apache Superset)
+- Product development in regulated environments
+- Release, rollout and operations management, monitoring, incident and performance management
 
-## Experience
+## Professional Experience
 
-### Nexxiot AG, Product Owner | Zurich, Switzerland | Jul 2020 – Present
+### Nexxiot AG, Product Owner | Zurich | Jul 2020 – Present
+- Responsibility for product vision, product strategy, roadmap and prioritization across a diverse product portfolio
+- End-to-end ownership for product discovery and product delivery
+- Translation of customer requirements and business objectives into product backlogs, user stories and releases
+- Close collaboration with engineering, data, operations, customers and management
+- Coordination of parallel product initiatives with a planning horizon of 12 to 18 months
+- Responsibility for annual revenue of CHF 1.6 million (2024)
+- Responsibility for the delivery of an enterprise customer contract worth over CHF 4 million
+- Development and use of product metrics and KPIs for data-driven prioritization and product optimization
+- Machine-learning-based classification of raw sensor data to distinguish between production and installation defects and prevent a write-off of over CHF 1 million
+- Establishment of structured release, rollout and operational processes
 
-- Own end-to-end delivery of the sensor data stack from device ingestion to customer-facing applications and production rollout.
-- Coordinate delivery across multiple initiatives in parallel, managing priorities and cross-team dependencies with a 12–18 month planning horizon.
-- Lead a long-running, security-critical sensor product from requirements gathering to product maturity as primary interface to enterprise customer and suppliers, delivering a CHF 4M contract.
-- Design and operate fleet-health and KPI dashboards to detect data anomalies, track rollouts, and ensure performance targets for large-scale customer projects.
-- Deliver a production-grade ML-based classification capability that prevented a CHF 1M hardware write-off.
+### Nexxiot AG, Solution Manager | Zurich | Oct 2019 – Jul 2020
+- End-to-end coordination of the development and market launch of a complex product
+- Interface between business, engineering and operations
+- Support in product definition, market launch and further development of existing products
+- Alignment of customer requirements, technical solutions and operational implementation
 
-### Nexxiot AG, Solution Manager | Zurich, Switzerland | Oct 2019 – Jul 2020
-
-- Coordination of development and launch of a regulated, customer-facing product.  
-- Interface between customers, engineering, and operations during early rollout.
-
-### Nexxiot AG, Project Manager | Zurich, Switzerland | Feb 2019 – Sep 2019
-
-- Establishment of foundational quality and information security processes.  
-- Coordination of international logistics and compliant deliveries.
+### Nexxiot AG, Project Manager | Zurich | Jun 2018 – Sep 2019
+- Project management for complex product and delivery projects
+- Establishment and implementation of quality management and information security processes
+- Support and preparation of ISO 9001 and ISO 27001 audits
+- Coordination of international supply chains and external partners
+- Optimization of internal processes across project, product and logistics workflows
 
 ## Education
-BA, Art History, University of Zurich  
-Matura (Science & Mathematics), Kantonsschule Schaffhausen  
+- Bachelor of Arts, University of Zurich (2015–2018)
+- Swiss Matura (Science and Mathematics), Cantonal School of Schaffhausen (2009–2013)
 
-## Languages & Availability
-German (native), English (fluent), French (advanced)  
-Notice period: 3 months
+## Languages
+- German (native)
+- English (fluent)
+- French (advanced)
+
+## Availability
+- Notice period: 3 months
