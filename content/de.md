@@ -19,7 +19,7 @@
 ## Berufserfahrung
 
 ### Nexxiot AG, Product Owner | Zürich | Jul 2020 – Heute
-- Verantwortung für Produktvision, Produktstrategie, Roadmap und Priorisierung eines Multi-SKU-Produktportfolios
+- Verantwortung für Produktvision, Produktstrategie, Roadmap und Priorisierung über ein vielfältiges Produktportfolio hinweg
 - End-to-End-Ownership für Product Discovery und Product Delivery
 - Übersetzung von Kundenanforderungen und Business-Zielen in Product Backlogs, User Stories und Releases
 - Enge Zusammenarbeit mit Engineering, Daten, Operations, Kunden und Management
@@ -39,7 +39,7 @@
 ### Nexxiot AG, Project Manager | Zürich | Jun 2018 – Sep 2019
 - Projektmanagement für komplexe Produkt- und Lieferprojekte
 - Aufbau und Etablierung von Qualitätsmanagement- und Informationssicherheitsprozessen
-- Unterstützung und Vorbereitung von ISO 9001- und ISO 27001-Audits
+- Unterstützung und Vorbereitung mehrerer ISO 9001- und ISO 27001-Audits
 - Koordination internationaler Lieferketten und externer Partner
 - Optimierung interner Prozesse in Projekt-, Produkt- und Logistikabläufen
 
