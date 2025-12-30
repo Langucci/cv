@@ -3,12 +3,12 @@
 - End-to-End-Verantwortung für Product Ownership von Produktvision über Roadmaps und Priorisierung bis Betrieb und kontinuierliche Optimierung
 - Ergebnisverantwortung mit CHF 1.6 Mio. Jahresumsatz sowie Sicherung und Umsetzung von Enterprise-Verträgen im mehrmillionigen CHF-Bereich
 - Vermeidung einer Abschreibung von über CHF 1 Mio. durch Daten- und ML-gestützte Produktentscheidungen
-- Starke Erfahrung in bereichsübergreifender Zusammenarbeit und Übersetzung von Business-Anforderungen in umsetzbare Produktlösungen
+- Umfangreiche Erfahrung in bereichsübergreifender Zusammenarbeit und Übersetzung von Business-Anforderungen in umsetzbare Produktlösungen
 
 ## Kompetenzen
 - Product Ownership, Product Management, Produktvision, Roadmap-Planung, Backlog-Management, Priorisierung
 - Stakeholder-Management, Anforderungsmanagement, bereichsübergreifende Zusammenarbeit
-- Portfolio- & Lifecycle-Management komplexer Produkte
+- Portfolio- & Lebenszyklus-Management komplexer Produkte
 - Plattform- & API-basierte Produktentwicklung, datengetriebene Produkte
 - KPI-Definition, Produktmetriken, Analytics, datenbasierte Entscheidungsfindung
 - SQL, Python, Anomalieerkennung, ML-gestützte Klassifikationsmodelle
