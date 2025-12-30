@@ -20,15 +20,13 @@
 
 ### Nexxiot AG, Product Owner | Zürich | Jul 2020 – Heute
 *Nexxiot AG ist ein Technologieunternehmen im Bereich digitale Logistik und bietet IoT- und Datenlösungen für die globale Transport- und Bahnindustrie.*
-- Verantwortung für Produktvision, Produktstrategie, Roadmap und Priorisierung über ein vielfältiges Produktportfolio hinweg
-- End-to-End-Ownership für Product Discovery und Product Delivery
-- Übersetzung von Kundenanforderungen und Business-Zielen in Product Backlogs, User Stories und Releases
-- Enge Zusammenarbeit mit Engineering, Daten, Operations, Kunden und Management
-- Koordination paralleler Produktinitiativen mit einem Planungshorizont von 12 bis 18 Monaten
-- Verantwortung für einen Jahresumsatz von CHF 1.6 Mio. (2024)
-- Verantwortung für die Umsetzung eines Enterprise-Kundenvertrags über CHF 4 Mio.
-- Aufbau und Nutzung von Produktmetriken und KPIs zur datenbasierten Priorisierung und Produktoptimierung
-- ML-gestützte Klassifikation roher Sensordaten zur Unterscheidung von Produktions- und Installationsfehlern und Vermeidung einer Abschreibung von über CHF 1 Mio.
+- Verantwortung für Produktvision, Produktstrategie, Roadmap und Priorisierung über ein komplexes Produktportfolio hinweg
+- Fachliche Führung und Koordination internationaler, cross-funktionaler Teams über Engineering, Data, Operations und externe Partner hinweg
+- Übersetzung von Business- und Kundenanforderungen in umsetzbare Produktentscheidungen, Backlogs und Releases
+- Koordination paralleler Initiativen mit einem Planungshorizont von 12–18 Monaten unter Berücksichtigung technischer und organisatorischer Abhängigkeiten
+- Verantwortung für einen Jahresumsatz von CHF 1.6 Mio. sowie erfolgreiche Umsetzung eines Enterprise-Vertrags über CHF 4 Mio.
+- Aufbau und Nutzung von Produktmetriken und KPIs zur datenbasierten Priorisierung und kontinuierlichen Produktoptimierung
+- ML-gestützte Klassifikation roher Sensordaten zur Unterscheidung von Produktions- und Installationsfehlern, wodurch eine Abschreibung von über CHF 1 Mio. vermieden wurde
 - Etablierung strukturierter Release-, Rollout- und Betriebsprozesse
 
 ### Nexxiot AG, Solution Manager | Zürich | Okt 2019 – Jul 2020
