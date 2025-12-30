@@ -2,7 +2,7 @@
 - Product Owner mit über 6 Jahren Erfahrung in der Entwicklung, Skalierung und Weiterentwicklung komplexer Produkte in regulierten Enterprise-Umfeldern
 - End-to-End-Verantwortung für Product Ownership von Produktvision über Roadmaps und Priorisierung bis Betrieb und kontinuierliche Optimierung
 - Ergebnisverantwortung mit CHF 1.6 Mio. Jahresumsatz sowie Sicherung und Umsetzung von Enterprise-Verträgen im mehrmillionigen CHF-Bereich
-- Vermeidung einer Abschreibung von über CHF 1 Mio. durch daten- und ML-gestützte Produktentscheidungen
+- Vermeidung einer Abschreibung von über CHF 1 Mio. durch Daten- und ML-gestützte Produktentscheidungen
 - Starke Erfahrung in bereichsübergreifender Zusammenarbeit und Übersetzung von Business-Anforderungen in umsetzbare Produktlösungen
 
 ## Kompetenzen
