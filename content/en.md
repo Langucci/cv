@@ -20,15 +20,13 @@
 
 ### Nexxiot AG, Product Owner | Zurich | Jul 2020 – Present
 *Nexxiot AG is a technology company providing IoT and data solutions for the global logistics industry.*
-- Responsibility for product vision, product strategy, roadmap and prioritization across a diverse product portfolio
-- End-to-end ownership for product discovery and product delivery
-- Translation of customer requirements and business objectives into product backlogs, user stories and releases
-- Close collaboration with engineering, data, operations, customers and management
-- Coordination of parallel product initiatives with a planning horizon of 12 to 18 months
-- Responsibility for annual revenue of CHF 1.6 million (2024)
-- Responsibility for the delivery of an enterprise customer contract worth over CHF 4 million
-- Development and use of product metrics and KPIs for data-driven prioritization and product optimization
-- Machine-learning-based classification of raw sensor data to distinguish between production and installation defects and prevent a write-off of over CHF 1 million
+- Responsibility for product vision, product strategy, roadmap and prioritization across a complex product portfolio
+- Functional leadership and coordination of international, cross-functional teams across engineering, data, operations and external partners
+- Translation of business and customer requirements into actionable product decisions, backlogs and releases
+- Coordination of parallel initiatives with a 12–18 month planning horizon, considering technical and organizational dependencies
+- Revenue responsibility of CHF 1.6 million and successful delivery of an enterprise customer contract valued at CHF 4 million
+- Definition and use of product metrics and KPIs to support data-driven prioritization and continuous product improvement
+- ML-based classification of raw sensor data to distinguish production defects from installation issues, preventing write-offs of over CHF 1 million
 - Establishment of structured release, rollout and operational processes
 
 ### Nexxiot AG, Solution Manager | Zurich | Oct 2019 – Jul 2020
