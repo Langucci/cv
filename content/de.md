@@ -1,46 +1,50 @@
 ## Profil
-- Product Owner mit über 6 Jahren Erfahrung in der Entwicklung, Skalierung und Weiterentwicklung komplexer Produkte in regulierten Enterprise-Umfeldern
-- End-to-End-Verantwortung für Product Ownership von Produktvision über Roadmaps und Priorisierung bis Betrieb und kontinuierliche Optimierung
-- Ergebnisverantwortung mit CHF 1.6 Mio. Jahresumsatz sowie Sicherung und Umsetzung von Enterprise-Verträgen im mehrmillionigen CHF-Bereich
-- Vermeidung einer Abschreibung von über CHF 1 Mio. durch Daten- und ML-gestützte Produktentscheidungen
-- Umfangreiche Erfahrung in bereichsübergreifender Zusammenarbeit und Übersetzung von Business-Anforderungen in umsetzbare Produktlösungen
+- Product Lead mit über 6 Jahren Erfahrung in der Entwicklung, Skalierung und Weiterentwicklung komplexer Produkte in regulierten Enterprise Umfeldern
+- End-to-End Verantwortung für Product Ownership von Produktvision über Roadmaps und Priorisierung bis Betrieb und kontinuierliche Optimierung
+- Ergebnisverantwortung mit CHF 1.6 Mio. Jahresumsatz sowie Sicherung und Umsetzung von Enterprise Verträgen im mehrmillionigen CHF Bereich
+- Vermeidung einer Abschreibung von über CHF 1 Mio. durch datenbasierte und ML basierte Produktentscheidungen
+- Umfangreiche Erfahrung in bereichsübergreifender Zusammenarbeit und Übersetzung von Business Anforderungen in umsetzbare Produktlösungen
 
 ## Kompetenzen
-- Product Ownership, Product Management, Produktvision, Roadmap-Planung, Backlog-Management, Priorisierung
-- Stakeholder-Management, Anforderungsmanagement, bereichsübergreifende Zusammenarbeit
-- Portfolio- & Lebenszyklus-Management komplexer Produkte
-- Plattform- & API-basierte Produktentwicklung, datengetriebene Produkte
-- KPI-Definition, Produktmetriken, Analytics, datenbasierte Entscheidungsfindung
-- SQL, Python, Anomalieerkennung, ML-gestützte Klassifikationsmodelle
-- Jira, Confluence, Analytics- & BI-Tools (z. B. Apache Superset)
+- Product Ownership, Product Management, Produktvision, Roadmap Planung, Backlog Management, Priorisierung
+- Stakeholder Management, Anforderungsmanagement, bereichsübergreifende Zusammenarbeit
+- Portfolio und Lebenszyklus Management komplexer Produkte
+- Plattform und API basierte Produktentwicklung, datengetriebene Produkte
+- Definition von KPIs, Produktmetriken, Analytics, datenbasierte Entscheidungsfindung
+- SQL, Python, Anomalieerkennung, ML basierte Klassifikationsmodelle
+- Jira, Confluence, Analytics und BI Tools
 - Produktentwicklung in regulierten Umfeldern
-- Release-, Rollout- & Betriebsmanagement, Monitoring, Incident- & Performance-Management
+- Release, Rollout und Betriebsmanagement, Monitoring, Incident und Performance Management
 
 ## Berufserfahrung
 
-### Nexxiot AG, Product Owner | Zürich | Jul 2020 – Heute
+### Nexxiot AG, Product Lead (Head of Sensors) | Zürich | Jan 2024 – Heute
 *Nexxiot AG ist ein Technologieunternehmen im Bereich digitale Logistik und bietet IoT- und Datenlösungen für die globale Transport- und Bahnindustrie.*
-- Verantwortung für Produktvision, Produktstrategie, Roadmap und Priorisierung über ein komplexes Produktportfolio hinweg
-- Fachliche Führung und Koordination internationaler, cross-funktionaler Teams über Engineering, Data, Operations und externe Partner hinweg
-- Übersetzung von Business- und Kundenanforderungen in umsetzbare Produktentscheidungen, Backlogs und Releases
-- Koordination paralleler Initiativen mit einem Planungshorizont von 12–18 Monaten unter Berücksichtigung technischer und organisatorischer Abhängigkeiten
-- Verantwortung für einen Jahresumsatz von CHF 1.6 Mio. sowie erfolgreiche Umsetzung eines Enterprise-Vertrags über CHF 4 Mio.
-- Aufbau und Nutzung von Produktmetriken und KPIs zur datenbasierten Priorisierung und kontinuierlichen Produktoptimierung
-- ML-gestützte Klassifikation roher Sensordaten zur Unterscheidung von Produktions- und Installationsfehlern, wodurch eine Abschreibung von über CHF 1 Mio. vermieden wurde
-- Etablierung strukturierter Release-, Rollout- und Betriebsprozesse
+- Gesamtverantwortung für Ausrichtung, Wirtschaftlichkeit und Performance mehrerer internationaler Sensorproduktlinien mit einem Jahresumsatz von > CHF 1.6 Mio.
+- Priorisierung strategischer Initiativen unter Abwägung von Risiko, Kundennutzen und Skalierbarkeit
+- Fachliche Führung verteilter Teams über Engineering, Data und Operations
+- Zentrale Ansprechperson für technische und operative Eskalationen in aktiven Kundenflotten
+- ML basierte Analysen verhinderten Abschreibungen von über CHF 1 Mio.
+- Aufbau und Nutzung von flottenweiten Produktmetriken und KPIs zur datenbasierten Priorisierung und kontinuierlichen Produktoptimierung
+
+### Nexxiot AG, Product Owner Hardware Integration | Zürich | Jul 2020 – Dez 2023
+- Produktverantwortung entlang der gesamten Wertschöpfungskette von Hardware über Firmware und Konnektivität bis zu Backend, APIs sowie Web und Mobile Applikationen
+- Aufnahme und Strukturierung technischer Anforderungen in enger Zusammenarbeit mit Teams aus Embedded, Cloud, Frontend und Data
+- Koordination von Umsetzung, Integration und Abnahme über mehrere Systemkomponenten hinweg
+- Verantwortung für Entwicklung und erfolgreiche Markteinführung eines sicherheitsrelevanten Produkts im Rahmen eines Enterprise Vertrags über CHF 4 Mio.
 
 ### Nexxiot AG, Solution Manager | Zürich | Okt 2019 – Jul 2020
-- End-to-End-Koordination der Entwicklung und Markteinführung eines komplexen Produkts
+- End-to-End Koordination der Entwicklung und Markteinführung eines komplexen Produkts
 - Schnittstelle zwischen Business, Engineering und Operations
 - Unterstützung bei Produktdefinition, Markteinführung und Weiterentwicklung bestehender Produkte
 - Abstimmung von Kundenanforderungen, technischen Lösungen und operativer Umsetzung
 
 ### Nexxiot AG, Project Manager | Zürich | Jun 2018 – Sep 2019
 - Projektmanagement für komplexe Produkt- und Lieferprojekte
-- Aufbau und Etablierung von Qualitätsmanagement- und Informationssicherheitsprozessen
-- Unterstützung und Vorbereitung mehrerer ISO 9001- und ISO 27001-Audits
+- Aufbau und Etablierung von Qualitätsmanagement und Informationssicherheisystemen
+- Unterstützung und Vorbereitung mehrerer ISO 9001 und ISO 27001 Audits
 - Koordination internationaler Lieferketten und externer Partner
-- Optimierung interner Prozesse in Projekt-, Produkt- und Logistikabläufen
+- Optimierung interner Prozesse in Projekt, Produkt und Logistikabläufen
 
 ## Ausbildung
 - Bachelor of Arts, Universität Zürich (2015–2018)
