@@ -6,7 +6,7 @@
 - Umfangreiche Erfahrung in bereichsübergreifender Zusammenarbeit und Übersetzung von Business Anforderungen in umsetzbare Produktlösungen
 
 ## Kompetenzen
-- Product Ownership, Product Management, Produktvision, Roadmap Planung, Backlog Management, Priorisierung
+- Product Ownership, Product Management, Produktvision, Roadmap Planung, Backlog Management
 - Stakeholder Management, Anforderungsmanagement, bereichsübergreifende Zusammenarbeit
 - Portfolio und Lebenszyklus Management komplexer Produkte
 - Plattform und API basierte Produktentwicklung, datengetriebene Produkte
